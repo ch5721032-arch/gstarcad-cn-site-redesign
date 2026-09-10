@@ -184,6 +184,41 @@ a{text-decoration:none;color:inherit}
 .tool{width:46px;height:46px;border-radius:14px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);display:flex;align-items:center;justify-content:center;color:#41527A}
 .tool.primary{background:linear-gradient(135deg,#2E7CF6,#1B4ED8);color:#fff;border-color:transparent;box-shadow:0 12px 26px rgba(30,94,232,.35)}
 .tool svg{width:20px;height:20px}
+
+/* ---------- 产品下拉（Mega Menu） ---------- */
+.menu-item{position:static}
+.menu-link{position:relative;padding:6px 0;display:inline-flex;align-items:center;gap:6px;color:#22314D;font-weight:600;cursor:pointer}
+.menu-link .caret{width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid #8A9BB8;transition:.2s;margin-top:3px}
+.menu-item.open .menu-link{color:var(--blue)}
+.menu-item.open .caret{border-top-color:var(--blue);transform:rotate(180deg)}
+.mega{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(6px);width:1120px;max-width:calc(100vw - 40px);padding-top:12px;opacity:0;visibility:hidden;transition:.2s ease;z-index:70}
+.menu-item.open .mega{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.mega-in{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 28px 64px rgba(12,34,80,.18);padding:26px 28px 0;overflow:hidden}
+.mega-cols{display:grid;grid-template-columns:1.06fr .7fr .96fr 1fr;gap:8px}
+.mega-col{padding:0 16px 16px}
+.mega-col + .mega-col{border-left:1px dashed #E6EDF8}
+.mega-col h6{font-size:12px;color:#8494AE;letter-spacing:.14em;font-weight:800;margin:0 0 12px;padding-left:10px}
+.m-item{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;color:#22314D;font-size:13.6px;font-weight:600;position:relative;transition:.16s;cursor:pointer}
+.m-item:hover{background:#EEF5FF;color:var(--blue)}
+.m-item .m-logo{width:30px;height:30px;border-radius:9px;flex:0 0 30px;display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:800;color:#fff;background:linear-gradient(135deg,#2E7CF6,#1B4ED8)}
+.m-item.v2 .m-logo{background:linear-gradient(135deg,#37C6FF,#1E5EE8)}
+.m-item.v3 .m-logo{background:linear-gradient(135deg,#7C5CFF,#2E7CF6)}
+.m-item.v4 .m-logo{background:linear-gradient(135deg,#12B6A2,#1E5EE8)}
+.m-item .soon{font-style:normal;font-size:10.5px;color:#9AA9C0;border:1px solid #E1E9F6;border-radius:999px;padding:1px 7px;margin-left:auto;flex:0 0 auto}
+.m-item.disabled{cursor:default;color:#8B9AB3}
+.m-item.disabled:hover{background:transparent;color:#8B9AB3}
+.m-item .sub-caret{margin-left:auto;color:#9AA9C0;font-size:14px;line-height:1}
+.m-sub{position:absolute;left:calc(100% + 4px);top:-8px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 22px 48px rgba(12,34,80,.18);padding:8px;min-width:196px;opacity:0;visibility:hidden;transform:translateX(-4px);transition:.16s;z-index:71}
+.m-item.has-sub:hover .m-sub{opacity:1;visibility:visible;transform:none}
+.m-sub a{display:block;padding:8px 12px;border-radius:9px;font-size:13.4px;font-weight:600;color:#22314D}
+.m-sub a:hover{background:#EEF5FF;color:var(--blue)}
+.mega-foot{margin:4px -28px 0;padding:15px 28px;border-top:1px solid var(--line);background:#F8FBFF;display:flex;align-items:center;justify-content:space-between}
+.mega-foot .all{font-size:14px;font-weight:700;color:var(--blue)}
+.mega-foot .all:hover{text-decoration:underline}
+.mega-foot .quote{background:linear-gradient(135deg,#2E7CF6,#1B4ED8);color:#fff;padding:9px 24px;border-radius:999px;font-size:14px;font-weight:700;box-shadow:0 10px 22px rgba(30,94,232,.28)}
+.mega-foot .quote:hover{transform:translateY(-1px)}
+@media (max-width:1240px){.mega{width:calc(100vw - 40px)}.mega-cols{grid-template-columns:repeat(2,1fr)}.mega-col:nth-child(3){border-left:none}}
+@media (max-width:900px){.mega{position:absolute;top:100%;left:12px;right:12px;width:auto;max-width:none;max-height:74vh;overflow:auto;padding-top:8px;transform:none}.menu-item.open .mega{transform:none}.mega-in{border-radius:14px;padding:18px 16px 0}.mega-cols{grid-template-columns:1fr}.mega-col{border-left:none!important;padding:0 4px 14px}.mega-col + .mega-col{border-top:1px dashed #E6EDF8;padding-top:14px}.mega-col h6{padding-left:8px}.m-sub{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;padding:0 0 0 40px;margin:0}}
 </style>
 </head>
 <body>
@@ -193,7 +228,61 @@ a{text-decoration:none;color:inherit}
   <div class="container nav-in">
     <div class="logo"><span class="logo-mark"></span><span>浩辰软件<small>GSTARCAD</small></span></div>
     <nav class="menu">
-      <a class="on" href="#">首页</a><a href="#">产品</a><a href="#">解决方案</a><a href="#">案例</a><a href="#">生态</a><a href="#">服务</a><a href="#">关于</a>
+      <a class="on" href="#">首页</a>
+      <div class="menu-item has-mega">
+        <a class="menu-link" href="#" aria-haspopup="true" aria-expanded="false">产品<i class="caret"></i></a>
+        <div class="mega">
+          <div class="mega-in">
+            <div class="mega-cols">
+              <div class="mega-col">
+                <h6>2D CAD</h6>
+                <a class="m-item" href="https://www.gstarcad.com/cad/"><span class="m-logo">平台</span><span>浩辰CAD 平台软件</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/architecture/"><span class="m-logo">建筑</span><span>浩辰CAD建筑</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/product/gstarcad_hva/"><span class="m-logo">暖通</span><span>浩辰CAD暖通</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/product/gstarcad_ep/"><span class="m-logo">电力</span><span>浩辰CAD电力</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/product/gstarcad_wsd/"><span class="m-logo">给排</span><span>浩辰CAD给排水</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/product/gstarcad_elec/"><span class="m-logo">电气</span><span>浩辰CAD电气</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/mechanical/"><span class="m-logo">机械</span><span>浩辰CAD机械</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/gstarcad_bduct/"><span class="m-logo">母线</span><span>浩辰CAD母线槽</span></a>
+              </div>
+              <div class="mega-col">
+                <h6>BIM &amp; 3D CAD</h6>
+                <a class="m-item v2" href="https://www.gstarcad.com/bim/"><span class="m-logo">BIM</span><span>GstarBIM</span></a>
+                <span class="m-item v2 disabled"><span class="m-logo">Z3</span><span>浩辰-ZIXEL 3D</span><em class="soon">敬请期待</em></span>
+              </div>
+              <div class="mega-col">
+                <h6>云 CAD</h6>
+                <a class="m-item v3" href="https://www.gstarcad.com/gstarcad365/"><span class="m-logo">365</span><span>浩辰CAD 365</span></a>
+                <a class="m-item v3" href="https://ai.gstarcad.com/stair/"><span class="m-logo">AI</span><span>浩辰AI楼梯</span></a>
+                <div class="m-item v3 has-sub"><span class="m-logo">看图</span><span>浩辰CAD看图王</span><i class="sub-caret">›</i>
+                  <div class="m-sub">
+                    <a href="https://yun.gstarcad.com/mobile/">看图王 手机版</a>
+                    <a href="https://yun.gstarcad.com/windows/">看图王 电脑版</a>
+                    <a href="https://web.gstarcad.com/">看图王 网页版</a>
+                    <a href="https://cehui.gstarcad.com/">测绘 PAD 版</a>
+                    <a href="https://yun.gstarcad.com/enterprise-land/">企业 SDK</a>
+                  </div>
+                </div>
+              </div>
+              <div class="mega-col">
+                <h6>信创行业</h6>
+                <a class="m-item v4" href="https://www.gstarcad.com/cad_linux/"><span class="m-logo">平台</span><span>浩辰CAD Linux版</span></a>
+                <a class="m-item v4" href="https://www.gstarcad.com/mech_linux/"><span class="m-logo">机械</span><span>浩辰CAD机械 Linux版</span></a>
+                <a class="m-item v4" href="https://www.gstarcad.com/arch_linux/"><span class="m-logo">建筑</span><span>浩辰CAD建筑 Linux版</span></a>
+                <a class="m-item v4" href="https://www.gstarcad.com/xinchuang/"><span class="m-logo">给排</span><span>浩辰CAD给排水 Linux版</span></a>
+                <a class="m-item v4" href="https://www.gstarcad.com/xinchuang/"><span class="m-logo">电气</span><span>浩辰CAD电气 Linux版</span></a>
+                <a class="m-item v4" href="https://www.gstarcad.com/xinchuang/"><span class="m-logo">暖通</span><span>浩辰CAD暖通 Linux版</span></a>
+                <a class="m-item v4" href="https://www.gstarcad.com/cad_harmony/"><span class="m-logo">鸿蒙</span><span>浩辰CAD 鸿蒙版</span></a>
+              </div>
+            </div>
+            <div class="mega-foot">
+              <a class="all" href="https://www.gstarcad.com/download/">全部产品 →</a>
+              <a class="quote" href="https://www.gstarcad.com/price/">获取报价</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#">解决方案</a><a href="#">案例</a><a href="#">生态</a><a href="#">服务</a><a href="#">关于</a>
     </nav>
     <div class="nav-right">
       <span class="icon-btn"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
@@ -573,6 +662,29 @@ a{text-decoration:none;color:inherit}
   <span class="tool"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span>
   <span class="tool"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 19V7"/><path d="M6 13l6-6 6 6"/></svg></span>
 </div>
+
+
+<script>
+(function(){
+  var item = document.querySelector('.menu-item.has-mega');
+  if(!item) return;
+  var link = item.querySelector('.menu-link');
+  var timer = null;
+  function open(){ clearTimeout(timer); item.classList.add('open'); link.setAttribute('aria-expanded','true'); }
+  function close(){ item.classList.remove('open'); link.setAttribute('aria-expanded','false'); }
+  item.addEventListener('mouseenter', open);
+  item.addEventListener('mouseleave', function(){ clearTimeout(timer); timer = setTimeout(close, 150); });
+  link.addEventListener('click', function(e){
+    e.preventDefault();
+    var hoverUI = window.matchMedia('(hover:hover) and (min-width:901px)').matches;
+    if (hoverUI) return;   // 桌面端由 hover 控制
+    open();                // 触屏/窄屏：点击展开，点空白处或 Esc 收起
+  });
+  document.addEventListener('click', function(e){ if(!item.contains(e.target)) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+  item.querySelectorAll('.mega a').forEach(function(a){ a.addEventListener('click', function(){ /* demo links */ }); });
+})();
+</script>
 
 </body>
 </html>
