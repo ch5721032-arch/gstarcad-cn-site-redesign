@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>浩辰软件官网改版效果图</title>
+<style>
+:root{
+  --blue:#1E5EE8; --blue2:#2E7CF6; --cyan:#37C6FF; --navy:#081630; --navy2:#0E2A5C;
+  --ink:#0F1E33; --body:#5A6B85; --line:#E3EAF5; --bg:#F4F7FC; --card:#FFFFFF;
+  --radius:16px; --shadow:0 14px 34px rgba(15,40,90,.10); --shadow-sm:0 6px 18px rgba(15,40,90,.07);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+.container{width:1200px;margin:0 auto}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:999px;font-size:14px;font-weight:600;cursor:pointer;transition:.25s}
+.pill-primary{background:linear-gradient(135deg,#2E7CF6,#1B4ED8);color:#fff;padding:11px 30px;box-shadow:0 10px 22px rgba(30,94,232,.32)}
+.pill-primary:hover{transform:translateY(-1px);box-shadow:0 14px 26px rgba(30,94,232,.4)}
+.pill-ghost{border:1.5px solid rgba(46,124,246,.55);color:#1E5EE8;padding:10px 28px;background:#fff}
+.pill-ghost:hover{background:#EAF2FF}
+.pill-white{background:#fff;color:#12328F;padding:10px 26px;box-shadow:0 8px 20px rgba(0,0,0,.18)}
+.eyebrow{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.12em;color:var(--blue);background:#EAF2FF;border-radius:999px;padding:5px 14px;margin-bottom:14px}
+.sec{padding:78px 0}
+.sec-head{text-align:center;margin-bottom:44px}
+.sec-head h2{font-size:30px;letter-spacing:.02em}
+.sec-head p{margin-top:12px;color:var(--body);font-size:14.5px}
+
+/* ---------- 顶部导航 ---------- */
+.nav{height:68px;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(227,234,245,.9);position:sticky;top:0;z-index:60}
+.nav-in{height:68px;display:flex;align-items:center;gap:34px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:19px;letter-spacing:.01em}
+.logo-mark{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,#37C6FF,#1B4ED8);position:relative;box-shadow:0 6px 14px rgba(30,94,232,.35)}
+.logo-mark::after{content:"";position:absolute;inset:7px;border:2px solid #fff;border-radius:4px;opacity:.9}
+.logo small{font-weight:600;font-size:11px;color:var(--body);letter-spacing:.16em;display:block;margin-top:1px}
+.menu{display:flex;gap:28px;font-size:15px;font-weight:600;color:#22314D}
+.menu a{position:relative;padding:6px 0}
+.menu a:hover{color:var(--blue)}
+.menu a.on::after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:-16px;width:26px;height:3px;border-radius:3px;background:linear-gradient(90deg,#37C6FF,#1B4ED8)}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:18px}
+.icon-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:#41527A}
+.login{font-size:14.5px;font-weight:600;color:#22314D}
+.mini-dl{padding:9px 20px;font-size:14px;border-radius:999px;background:linear-gradient(135deg,#2E7CF6,#1B4ED8);color:#fff;font-weight:700;box-shadow:0 8px 18px rgba(30,94,232,.28)}
+
+/* ---------- 首屏 ---------- */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(900px 420px at 82% 12%,rgba(55,198,255,.22),transparent 60%),
+  radial-gradient(700px 380px at 8% 88%,rgba(46,124,246,.25),transparent 62%),
+  linear-gradient(120deg,#071226 0%,#0B2250 46%,#0E2F6E 100%);color:#fff}
+.hero::before{content:"";position:absolute;inset:0;opacity:.5;background-image:
+  linear-gradient(rgba(90,150,255,.14) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(90,150,255,.14) 1px,transparent 1px);
+  background-size:56px 56px;mask-image:radial-gradient(70% 80% at 50% 40%,#000 30%,transparent 100%)}
+.hero-in{position:relative;display:grid;grid-template-columns:560px 1fr;gap:40px;align-items:center;padding:72px 0 66px}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#BFD8FF;background:rgba(90,150,255,.16);border:1px solid rgba(120,170,255,.35);border-radius:999px;padding:6px 16px}
+.hero-tag i{width:6px;height:6px;border-radius:50%;background:#37C6FF;box-shadow:0 0 10px #37C6FF}
+.hero h1{font-size:44px;line-height:1.28;margin:20px 0 18px;letter-spacing:.01em}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,#8FD0FF,#37C6FF);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:#C4D6F2;font-size:15.5px;line-height:1.9;max-width:520px}
+.hero-btns{display:flex;gap:14px;margin:30px 0 34px}
+.pill-glass{background:rgba(255,255,255,.1);border:1px solid rgba(180,210,255,.4);color:#EAF3FF;padding:10px 28px;border-radius:999px;font-size:14px;font-weight:600}
+.pill-glass:hover{background:rgba(255,255,255,.18)}
+.hero-stats{display:flex;gap:38px}
+.hero-stats b{font-size:26px;background:linear-gradient(180deg,#FFFFFF,#9FC6FF);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-stats span{display:block;font-size:12.5px;color:#9FB6DA;margin-top:4px}
+.hero-art{position:relative;height:420px}
+.hero-art svg{width:100%;height:100%}
+.float-card{position:absolute;background:rgba(255,255,255,.09);border:1px solid rgba(170,205,255,.35);border-radius:12px;padding:10px 14px;font-size:12.5px;color:#DCE9FF;backdrop-filter:blur(6px)}
+.float-card b{display:block;font-size:14px;color:#fff;margin-bottom:2px}
+.fc1{top:24px;left:-6px}
+.fc2{bottom:34px;right:2px}
+
+/* ---------- 通知条 ---------- */
+.notice{background:linear-gradient(90deg,#EAF2FF,#F4F8FF);border-bottom:1px solid #DCE7F8}
+.notice-in{height:46px;display:flex;align-items:center;justify-content:center;gap:14px;font-size:13.5px;color:#22314D}
+.notice strong{color:#12328F}
+.notice a{color:var(--blue);font-weight:700}
+.notice a:hover{text-decoration:underline}
+
+/* ---------- 热门产品 ---------- */
+.products{background:var(--bg)}
+.p-grid{display:grid;grid-template-columns:262px repeat(3,1fr);gap:18px}
+.p-feature{background:linear-gradient(160deg,#0B2250,#15408F 60%,#1B4ED8);border-radius:18px;padding:26px 22px;color:#fff;position:relative;overflow:hidden;box-shadow:0 18px 40px rgba(13,45,110,.35)}
+.p-feature::after{content:"";position:absolute;right:-40px;bottom:-50px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(55,198,255,.5),transparent 62%)}
+.p-feature .tag{font-size:11.5px;letter-spacing:.14em;color:#9FD2FF;font-weight:700}
+.p-feature h3{font-size:22px;margin:14px 0 10px;line-height:1.4}
+.p-feature p{font-size:13px;color:#C6D8F5;line-height:1.85}
+.p-feature .pill{margin-top:22px}
+.p-col-head{display:flex;align-items:center;gap:8px;font-weight:800;font-size:15px;color:#12328F;justify-content:center;padding-bottom:12px}
+.p-col-head i{width:8px;height:8px;border-radius:3px;background:linear-gradient(135deg,#37C6FF,#1B4ED8)}
+.p-col{display:flex;flex-direction:column;gap:14px}
+.p-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;flex:1;transition:.25s;position:relative;overflow:hidden}
+.p-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#C9DCFB}
+.p-card .ph{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.p-mono{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;color:#fff;background:linear-gradient(135deg,#2E7CF6,#1B4ED8);letter-spacing:.02em}
+.p-mono.g2{background:linear-gradient(135deg,#37C6FF,#1E5EE8)}
+.p-mono.g3{background:linear-gradient(135deg,#7B9BFF,#3348C9)}
+.p-mono.g4{background:linear-gradient(135deg,#28B8A8,#1E7ED8)}
+.p-card h4{font-size:15.5px}
+.p-card h4 span{display:block;font-size:11px;color:#9AA8C0;font-weight:500;margin-top:2px}
+.p-card p{font-size:12.5px;color:var(--body);line-height:1.8;margin-top:8px}
+.p-card .more{display:inline-flex;align-items:center;gap:5px;margin-top:12px;font-size:12.5px;font-weight:700;color:var(--blue)}
+.p-card .more:hover{gap:9px}
+.p-actions{display:flex;justify-content:center;gap:14px;margin-top:38px}
+
+/* ---------- 选择理由 ---------- */
+.reasons{background:#fff}
+.tabs{display:flex;justify-content:center;gap:12px;margin-bottom:34px}
+.tab{padding:10px 26px;border-radius:999px;border:1px solid var(--line);font-size:14.5px;font-weight:600;color:#41527A;background:#fff;transition:.2s}
+.tab.on{background:linear-gradient(135deg,#2E7CF6,#1B4ED8);color:#fff;border-color:transparent;box-shadow:0 10px 22px rgba(30,94,232,.28)}
+.reason-panel{display:grid;grid-template-columns:1fr 520px;gap:46px;align-items:center;background:linear-gradient(120deg,#F2F7FF,#EAF2FF 70%,#E4F0FF);border:1px solid #DCE7F8;border-radius:20px;padding:44px 46px}
+.reason-panel h3{font-size:26px;margin-bottom:14px}
+.reason-panel p{color:#41527A;font-size:14.5px;line-height:2;max-width:520px}
+.reason-panel .pill-row{display:flex;gap:14px;margin-top:26px}
+.reason-art{position:relative;height:280px}
+.reason-art svg{width:100%;height:100%}
+.reason-badges{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.rbadge{font-size:12px;color:#12328F;background:#fff;border:1px solid #D6E4FA;border-radius:8px;padding:6px 12px;font-weight:600}
+
+/* ---------- 客户案例 ---------- */
+.cases{background:var(--bg)}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.case-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;transition:.25s}
+.case-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#C9DCFB}
+.case-logo{height:52px;border-radius:10px;background:linear-gradient(120deg,#F3F7FE,#E9F1FE);border:1px dashed #C9DCFB;display:flex;align-items:center;justify-content:center;font-weight:800;color:#12328F;font-size:15px;letter-spacing:.03em}
+.case-card p{font-size:13px;color:var(--body);line-height:1.9;margin:16px 0 18px;min-height:74px}
+.case-foot{display:flex;align-items:center;justify-content:space-between}
+.case-foot a{font-size:12.5px;font-weight:700;color:var(--blue)}
+.mini-ghost{font-size:12.5px;font-weight:700;color:#1E5EE8;border:1px solid #BAD0F6;border-radius:999px;padding:6px 14px;background:#F6FAFF}
+
+/* ---------- 新闻 ---------- */
+.news{background:#fff}
+.news-grid{display:grid;grid-template-columns:600px 1fr;gap:26px}
+.news-feat{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;transition:.25s}
+.news-feat:hover{box-shadow:var(--shadow)}
+.news-cover{height:280px;background:
+  radial-gradient(420px 200px at 78% 18%,rgba(55,198,255,.35),transparent 62%),
+  linear-gradient(140deg,#0B2250,#1B4ED8);position:relative}
+.news-cover::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(150,190,255,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(150,190,255,.16) 1px,transparent 1px);background-size:38px 38px;mask-image:radial-gradient(70% 70% at 50% 50%,#000 20%,transparent 100%)}
+.news-body{padding:22px 24px}
+.news-body h3{font-size:18px;line-height:1.6;margin:12px 0 10px}
+.news-meta{font-size:12.5px;color:#93A2BC}
+.chip{display:inline-block;font-size:11.5px;font-weight:700;color:#12328F;background:#EAF2FF;border-radius:6px;padding:4px 10px;margin-right:8px}
+.chip.c2{color:#0B6B5B;background:#E2F6F1}
+.chip.c3{color:#8A5A00;background:#FFF3DB}
+.news-list{display:flex;flex-direction:column;gap:14px}
+.news-item{display:grid;grid-template-columns:132px 1fr;gap:16px;border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff;transition:.25s}
+.news-item:hover{box-shadow:var(--shadow-sm);border-color:#C9DCFB}
+.news-thumb{border-radius:10px;background:linear-gradient(140deg,#12328F,#2E7CF6);position:relative;overflow:hidden}
+.news-thumb::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(180,215,255,.2) 1px,transparent 1px),linear-gradient(90deg,rgba(180,215,255,.2) 1px,transparent 1px);background-size:22px 22px}
+.news-item h4{font-size:14.5px;line-height:1.65;margin:8px 0 8px}
+.news-more{display:flex;justify-content:center;margin-top:34px}
+
+/* ---------- 全球布局 ---------- */
+.globe{background:
+  radial-gradient(900px 420px at 20% 20%,rgba(46,124,246,.28),transparent 60%),
+  radial-gradient(700px 360px at 88% 78%,rgba(55,198,255,.2),transparent 62%),
+  linear-gradient(120deg,#071226,#0B2250 55%,#0E2F6E);color:#fff;padding:84px 0}
+.globe-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:44px;align-items:center}
+.globe h2{font-size:30px;margin-bottom:14px}
+.globe .lead{color:#C4D6F2;font-size:14.5px;line-height:2;max-width:460px}
+.globe-nums{display:flex;gap:38px;margin:30px 0 26px}
+.globe-nums b{font-size:28px;background:linear-gradient(180deg,#fff,#9FC6FF);-webkit-background-clip:text;background-clip:text;color:transparent}
+.globe-nums span{display:block;font-size:12.5px;color:#9FB6DA;margin-top:4px}
+.legend{display:flex;gap:20px;flex-wrap:wrap;font-size:12.5px;color:#C4D6F2}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;vertical-align:middle}
+.map-wrap{position:relative;height:360px}
+.map-wrap svg{width:100%;height:100%}
+
+/* ---------- 页脚 ---------- */
+.footer{background:#050D1E;color:#9FB0CC;padding:58px 0 0}
+.foot-top{display:grid;grid-template-columns:280px repeat(5,1fr);gap:24px;padding-bottom:40px;border-bottom:1px solid rgba(140,170,220,.16)}
+.foot-brand .logo{color:#fff}
+.foot-brand p{font-size:12.5px;line-height:1.9;color:#8FA2C4;margin-top:16px}
+.hotline{margin-top:18px;font-size:13px;color:#C4D6F2}
+.hotline b{display:block;font-size:20px;color:#fff;letter-spacing:.02em;margin-top:4px}
+.foot-col h5{color:#fff;font-size:14px;margin-bottom:14px}
+.foot-col a{display:block;font-size:12.5px;color:#8FA2C4;line-height:2.2}
+.foot-col a:hover{color:#7FC4FF}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;padding:20px 0 26px;font-size:12px;color:#6C80A3}
+.foot-bottom .links{display:flex;gap:18px}
+
+/* ---------- 悬浮工具条 ---------- */
+.tools{position:fixed;right:26px;bottom:40px;display:flex;flex-direction:column;gap:10px;z-index:80}
+.tool{width:46px;height:46px;border-radius:14px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);display:flex;align-items:center;justify-content:center;color:#41527A}
+.tool.primary{background:linear-gradient(135deg,#2E7CF6,#1B4ED8);color:#fff;border-color:transparent;box-shadow:0 12px 26px rgba(30,94,232,.35)}
+.tool svg{width:20px;height:20px}
+</style>
+</head>
+<body>
+
+<!-- ===== 顶部导航 ===== -->
+<header class="nav">
+  <div class="container nav-in">
+    <div class="logo"><span class="logo-mark"></span><span>浩辰软件<small>GSTARCAD</small></span></div>
+    <nav class="menu">
+      <a class="on" href="#">首页</a><a href="#">产品</a><a href="#">解决方案</a><a href="#">案例</a><a href="#">生态</a><a href="#">服务</a><a href="#">关于</a>
+    </nav>
+    <div class="nav-right">
+      <span class="icon-btn"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
+      <a class="mini-dl" href="#">下载</a>
+      <a class="login" href="#">登录 / 注册</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== 首屏 ===== -->
+<section class="hero">
+  <div class="container hero-in">
+    <div>
+      <span class="hero-tag"><i></i>国产工业软件 · 自主可控 · DWG 完全兼容</span>
+      <h1>浩辰CAD 2026<br>全新<em>「芯」速度</em>设计体验</h1>
+      <p>深耕 CAD 领域二十余年，为工程建设与制造行业提供智能、专业的设计体验。平台加专业软件，覆盖设计全流程，让数智建造更高效。</p>
+      <div class="hero-btns">
+        <a class="pill pill-primary" href="#">免费下载</a>
+        <a class="pill pill-glass" href="#">购买咨询</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>20+</b><span>年行业深耕</span></div>
+        <div><b>100 万+</b><span>全球用户</span></div>
+        <div><b>90+</b><span>国家与地区</span></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 520 420" fill="none">
+        <defs>
+          <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#37C6FF"/><stop offset="1" stop-color="#2E7CF6"/>
+          </linearGradient>
+          <linearGradient id="lg2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#9FD2FF"/><stop offset="1" stop-color="#1B4ED8"/>
+          </linearGradient>
+          <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <ellipse cx="268" cy="216" rx="196" ry="120" stroke="#2E7CF6" stroke-opacity=".45" stroke-dasharray="5 7"/>
+        <ellipse cx="268" cy="216" rx="150" ry="196" stroke="#37C6FF" stroke-opacity=".28" stroke-dasharray="4 9" transform="rotate(18 268 216)"/>
+        <g opacity=".5" stroke="#5AA2FF" stroke-width="1">
+          <path d="M60 300 L480 300 M60 340 L480 340 M100 260 L440 260"/>
+          <path d="M120 240 L120 380 M200 240 L200 380 M280 240 L280 380 M360 240 L360 380 M440 240 L440 380"/>
+        </g>
+        <g stroke="url(#lg1)" stroke-width="1.6" filter="url(#glow)">
+          <path d="M240 108 L312 144 L240 180 L168 144 Z"/>
+          <path d="M168 144 L240 180 L240 268 L168 232 Z"/>
+          <path d="M240 180 L312 144 L312 232 L240 268 Z"/>
+          <path d="M186 156 L186 214 M222 174 L222 232 M258 174 L258 232 M294 156 L294 214" stroke-opacity=".55"/>
+          <path d="M198 300 L232 317 L198 334 L164 317 Z"/>
+          <path d="M164 317 L198 334 L198 372 L164 355 Z"/>
+          <path d="M198 334 L232 317 L232 355 L198 372 Z"/>
+        </g>
+        <g stroke="#7FC4FF" stroke-width="1.2" opacity=".8">
+          <path d="M198 300 L240 180" stroke-dasharray="4 5"/>
+          <path d="M232 317 L312 232" stroke-dasharray="4 5"/>
+          <circle cx="240" cy="180" r="3.5" fill="#37C6FF" stroke="none"/>
+          <circle cx="312" cy="232" r="3.5" fill="#37C6FF" stroke="none"/>
+          <circle cx="168" cy="232" r="3" fill="#2E7CF6" stroke="none"/>
+        </g>
+        <g fill="none" stroke="#9FD2FF" stroke-opacity=".85" stroke-width="1.3">
+          <path d="M60 96 L96 96 M78 78 L78 114"/>
+          <path d="M436 88 L466 88 M451 73 L451 103"/>
+        </g>
+        <g font-family="Consolas,monospace" fill="#7FC4FF" font-size="11" opacity=".9">
+          <text x="352" y="112">DWG 2026</text>
+          <text x="84" y="252">φ 12.6</text>
+          <text x="360" y="366">LAYOUT_01</text>
+        </g>
+      </svg>
+      <div class="float-card fc1"><b>多格式兼容</b>DWG / DXF / DWF</div>
+      <div class="float-card fc2"><b>云端协同</b>CAD 365 跨端协作</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 通知条 ===== -->
+<div class="notice">
+  <div class="container notice-in">
+    <span>浩辰CAD 2026「芯」速度焕新 · 交互云协同上线</span>
+    <a href="#">了解更多 →</a>
+  </div>
+</div>
+
+<!-- ===== 热门产品推荐 ===== -->
+<section class="sec products">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">PRODUCTS</span>
+      <h2>热门产品推荐</h2>
+      <p>覆盖 2D 制图、BIM 与 3D 设计、云端协同的完整产品矩阵</p>
+    </div>
+    <div class="p-grid">
+      <div class="p-feature">
+        <div class="tag">主打产品</div>
+        <h3>浩辰CAD 2026<br>专业版</h3>
+        <p>平台 + 专业软件一体化，全新「芯」速度引擎，交互与云协同全面升级。</p>
+        <a class="pill pill-white" href="#">了解更多</a>
+      </div>
+      <div>
+        <div class="p-col-head"><i></i>浩辰 2D CAD</div>
+        <div class="p-col">
+          <div class="p-card">
+            <div class="ph"><span class="p-mono">2D</span><h4>浩辰CAD 平台软件<span>2D CAD PLATFORM</span></h4></div>
+            <p>自主可控的 2D CAD 平台，DWG 完全兼容，覆盖设计与制图全流程。</p>
+            <a class="more" href="#">了解更多 →</a>
+          </div>
+          <div class="p-card">
+            <div class="ph"><span class="p-mono g2">建筑</span><h4>浩辰CAD 建筑<span>ARCHITECTURE</span></h4></div>
+            <p>面向建筑设计的专业模块，高效完成平立剖与施工图设计。</p>
+            <a class="more" href="#">了解更多 →</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="p-col-head"><i></i>BIM &amp; 3D CAD</div>
+        <div class="p-col">
+          <div class="p-card">
+            <div class="ph"><span class="p-mono g3">BIM</span><h4>GstarBIM<span>BIM SOLUTION</span></h4></div>
+            <p>建筑信息模型一体化解决方案，打通设计、施工与运维数据。</p>
+            <a class="more" href="#">了解更多 →</a>
+          </div>
+          <div class="p-card">
+            <div class="ph"><span class="p-mono g3">3D</span><h4>浩辰ZIXEL-3D<span>3D CAD</span></h4></div>
+            <p>三维协同设计平台，支持云端建模与轻量化浏览。</p>
+            <a class="more" href="#">了解更多 →</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="p-col-head"><i></i>浩辰云 CAD</div>
+        <div class="p-col">
+          <div class="p-card">
+            <div class="ph"><span class="p-mono g4">365</span><h4>浩辰CAD 365<span>CLOUD CAD</span></h4></div>
+            <p>跨平台云 CAD，网页、电脑、手机多端无缝协作。</p>
+            <a class="more" href="#">了解更多 →</a>
+          </div>
+          <div class="p-card">
+            <div class="ph"><span class="p-mono g4">看图</span><h4>浩辰CAD 看图王<span>VIEWER</span></h4></div>
+            <p>轻量看图与标注工具，支持多格式图纸快速打开与批注。</p>
+            <a class="more" href="#">了解更多 →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-actions">
+      <a class="pill pill-primary" href="#">购买咨询</a>
+      <a class="pill pill-ghost" href="#">更多产品</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 选择我们的理由 ===== -->
+<section class="sec reasons">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">WHY GSTARCAD</span>
+      <h2>选择我们的理由</h2>
+      <p>平台加专业软件，深入行业场景的设计解决方案</p>
+    </div>
+    <div class="tabs">
+      <a class="tab on" href="#">工程建设</a><a class="tab" href="#">制造</a><a class="tab" href="#">信创</a><a class="tab" href="#">云CAD</a>
+    </div>
+    <div class="reason-panel">
+      <div>
+        <h3>工程建设行业设计解决方案</h3>
+        <p>浩辰CAD 平台 + 专业软件，为用户提供智能、专业的设计体验，覆盖建筑、结构、机电等专业协同场景，让数智建造更高效。</p>
+        <div class="pill-row">
+          <a class="pill pill-primary" href="#">了解更多</a>
+          <a class="pill pill-ghost" href="#">立即咨询</a>
+        </div>
+        <div class="reason-badges">
+          <span class="rbadge">全套专业模块</span><span class="rbadge">DWG 完全兼容</span><span class="rbadge">协同设计</span>
+        </div>
+      </div>
+      <div class="reason-art">
+        <svg viewBox="0 0 520 280" fill="none">
+          <rect x="14" y="14" width="492" height="252" rx="18" fill="#fff" stroke="#DCE7F8"/>
+          <g opacity=".55" stroke="#C9DCFB" stroke-width="1">
+            <path d="M34 230 L486 230 M34 200 L486 200 M34 170 L486 170 M34 140 L486 140"/>
+            <path d="M120 40 L120 244 M210 40 L210 244 M300 40 L300 244 M390 40 L390 244"/>
+          </g>
+          <g stroke="url(#lg1)" stroke-width="1.7">
+            <path d="M150 196 L150 120 L230 96 L230 172 Z"/>
+            <path d="M230 96 L310 120 L310 196 L230 172 Z"/>
+            <path d="M150 120 L230 96 L310 120 L230 144 Z"/>
+            <path d="M170 152 L170 186 M196 144 L196 178 M250 140 L250 174 M276 148 L276 182"/>
+            <path d="M330 196 L330 148 L392 132 L392 180 Z"/>
+            <path d="M392 132 L436 148 L436 196 L392 180 Z"/>
+            <path d="M330 148 L392 132 L436 148 L392 164 Z"/>
+          </g>
+          <g stroke="#7FC4FF" stroke-width="1.4" filter="url(#glow)">
+            <path d="M120 76 L140 76 M130 66 L130 86"/>
+            <path d="M420 92 L444 92 M432 80 L432 104"/>
+            <circle cx="392" cy="120" r="4" fill="#37C6FF" stroke="none"/>
+          </g>
+          <g font-family="Consolas,monospace" font-size="11" fill="#7FA3D9">
+            <text x="36" y="52">SITE_PLAN.dwg</text>
+            <text x="356" y="236">SCALE 1:100</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 全球客户实践 ===== -->
+<section class="sec cases">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">CUSTOMERS</span>
+      <h2>全球客户实践</h2>
+      <p>来自工程建设与制造行业的真实应用反馈</p>
+    </div>
+    <div class="case-grid">
+      <div class="case-card">
+        <div class="case-logo">大中电机</div>
+        <p>提升约 15% 设计效率，加速新产品上市进程。</p>
+        <div class="case-foot"><a href="#">了解更多 →</a><a class="mini-ghost" href="#">立即咨询</a></div>
+      </div>
+      <div class="case-card">
+        <div class="case-logo">同泰新能源</div>
+        <p>服务响应及时，问题解决效率高，保障项目按期交付。</p>
+        <div class="case-foot"><a href="#">了解更多 →</a><a class="mini-ghost" href="#">立即咨询</a></div>
+      </div>
+      <div class="case-card">
+        <div class="case-logo">万达客车</div>
+        <p>多品类、多版本、多格式历史设计数据兼容适配，实现无痛迁移。</p>
+        <div class="case-foot"><a href="#">了解更多 →</a><a class="mini-ghost" href="#">立即咨询</a></div>
+      </div>
+      <div class="case-card">
+        <div class="case-logo">合立道设计集团</div>
+        <p>蓝图功能可集成至企业自研管理平台，提高协同效率。</p>
+        <div class="case-foot"><a href="#">了解更多 →</a><a class="mini-ghost" href="#">立即咨询</a></div>
+      </div>
+      <div class="case-card">
+        <div class="case-logo">川维石化</div>
+        <p>自主可控软件，保障设计数据安全与合规。</p>
+        <div class="case-foot"><a href="#">了解更多 →</a><a class="mini-ghost" href="#">立即咨询</a></div>
+      </div>
+      <div class="case-card">
+        <div class="case-logo">海口市设计集团</div>
+        <p>平台 + 专业软件，满足垂直领域的细分设计需求。</p>
+        <div class="case-foot"><a href="#">了解更多 →</a><a class="mini-ghost" href="#">立即咨询</a></div>
+      </div>
+    </div>
+    <div class="p-actions"><a class="pill pill-ghost" href="#">更多案例</a></div>
+  </div>
+</section>
+
+<!-- ===== 浩辰动态 ===== -->
+<section class="sec news">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">NEWS</span>
+      <h2>浩辰动态</h2>
+      <p>产品发布、公司动态与市场活动</p>
+    </div>
+    <div class="news-grid">
+      <div class="news-feat">
+        <div class="news-cover"></div>
+        <div class="news-body">
+          <span class="chip">公司动态</span>
+          <h3>浩辰软件入股子虔科技，深化 3D CAD 战略布局</h3>
+          <div class="news-meta">发布日期：2026/1/15</div>
+        </div>
+      </div>
+      <div class="news-list">
+        <div class="news-item">
+          <div class="news-thumb"></div>
+          <div>
+            <span class="chip c2">产品动态</span>
+            <h4>浩辰CAD 2026 正式发布：全新「芯」速度引擎上线</h4>
+            <div class="news-meta">发布日期：2026/1/15 · <a href="#" style="color:#1E5EE8;font-weight:700">阅读全文</a></div>
+          </div>
+        </div>
+        <div class="news-item">
+          <div class="news-thumb"></div>
+          <div>
+            <span class="chip c2">产品动态</span>
+            <h4>CAD 365 云协同能力升级，多端设计协作更顺畅</h4>
+            <div class="news-meta">发布日期：2026/1/15 · <a href="#" style="color:#1E5EE8;font-weight:700">阅读全文</a></div>
+          </div>
+        </div>
+        <div class="news-item">
+          <div class="news-thumb"></div>
+          <div>
+            <span class="chip c3">市场活动</span>
+            <h4>浩辰软件行业峰会：数智建造与国产工业软件实践</h4>
+            <div class="news-meta">发布日期：2026/1/15 · <a href="#" style="color:#1E5EE8;font-weight:700">阅读全文</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="news-more"><a class="pill pill-ghost" href="#">更多资讯</a></div>
+  </div>
+</section>
+
+<!-- ===== 全球布局 ===== -->
+<section class="globe">
+  <div class="container globe-grid">
+    <div>
+      <h2>浩辰软件，世界选择</h2>
+      <p class="lead">产品与服务覆盖全球 90 多个国家和地区，在中国、欧美、亚太等区域设有销售与技术支持网络。</p>
+      <div class="globe-nums">
+        <div><b>90+</b><span>国家与地区</span></div>
+        <div><b>100 万+</b><span>全球用户</span></div>
+        <div><b>200+</b><span>全球合作伙伴</span></div>
+      </div>
+      <div class="legend">
+        <span><i style="background:#37C6FF;box-shadow:0 0 8px #37C6FF"></i>中国销售中心</span>
+        <span><i style="background:#7FC4FF"></i>全球销售中心</span>
+        <span><i style="background:#FFD166"></i>研发中心</span>
+        <span><i style="background:#9FE8C8"></i>分公司</span>
+      </div>
+    </div>
+    <div class="map-wrap">
+      <svg viewBox="0 0 560 360" fill="none">
+        <g fill="#2E5FA8" opacity=".28">
+          <path d="M60 96 q30 -26 74 -18 q34 6 40 26 q10 30 -22 42 q-40 16 -70 -6 q-26 -20 -22 -44 Z"/>
+          <path d="M118 208 q26 -12 44 6 q18 20 6 46 q-14 30 -44 24 q-26 -6 -28 -34 q-2 -28 22 -42 Z"/>
+          <path d="M262 78 q46 -20 96 -6 q42 12 54 34 q14 26 -12 40 q-40 22 -104 12 q-48 -8 -56 -36 q-6 -28 22 -44 Z"/>
+          <path d="M300 172 q30 -8 52 10 q22 20 10 46 q-14 28 -50 26 q-30 -2 -34 -30 q-4 -34 22 -52 Z"/>
+          <path d="M430 240 q28 -10 48 8 q18 18 6 38 q-14 22 -44 18 q-24 -4 -26 -28 q-2 -22 16 -36 Z"/>
+        </g>
+        <g fill="#7FC4FF" opacity=".85">
+          <circle cx="392" cy="128" r="4.5" fill="#37C6FF"/><circle cx="392" cy="128" r="10" stroke="#37C6FF" stroke-opacity=".55"/>
+          <circle cx="188" cy="104" r="3.5"/><circle cx="212" cy="130" r="3"/>
+          <circle cx="308" cy="96" r="3.5"/><circle cx="120" cy="150" r="3"/>
+          <circle cx="330" cy="210" r="3"/><circle cx="452" cy="252" r="3"/>
+          <circle cx="256" cy="250" r="3"/><circle cx="470" cy="150" r="3"/>
+        </g>
+        <g stroke="#5AA2FF" stroke-opacity=".5" stroke-dasharray="3 5">
+          <path d="M392 128 Q300 60 188 104"/><path d="M392 128 Q360 210 256 250"/>
+          <path d="M392 128 Q470 170 470 150"/><path d="M392 128 Q300 200 120 150"/>
+        </g>
+        <g font-size="11" fill="#BFD8FF" font-family="Microsoft YaHei">
+          <text x="404" y="124">中国 · 苏州（总部）</text>
+          <text x="88" y="140">北美</text>
+          <text x="150" y="94">欧洲</text>
+          <text x="300" y="86">俄罗斯</text>
+          <text x="240" y="266">南美</text>
+          <text x="440" y="272">澳新</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 页脚 ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo"><span class="logo-mark"></span><span>浩辰软件<small>GSTARCAD</small></span></div>
+        <p>国产工业软件品牌，专注 CAD 平台与行业应用研发，为全球用户提供自主可控的设计解决方案。</p>
+        <div class="hotline">服务热线<b>400-800-1418</b></div>
+      </div>
+      <div class="foot-col"><h5>核心产品</h5><a href="#">浩辰CAD 平台软件</a><a href="#">浩辰CAD 建筑</a><a href="#">浩辰CAD 机械</a><a href="#">浩辰CAD 365</a></div>
+      <div class="foot-col"><h5>行业应用</h5><a href="#">工程建设</a><a href="#">制造行业</a><a href="#">信创方案</a><a href="#">云 CAD</a></div>
+      <div class="foot-col"><h5>技术服务</h5><a href="#">安装注册文档</a><a href="#">学习帮助文档</a><a href="#">产品视频教程</a><a href="#">经验技巧资讯</a></div>
+      <div class="foot-col"><h5>生态伙伴</h5><a href="#">信创生态伙伴</a><a href="#">渠道伙伴招募</a><a href="#">二次开发应用</a><a href="#">开发者工具</a></div>
+      <div class="foot-col"><h5>关于浩辰</h5><a href="#">公司介绍</a><a href="#">发展历程</a><a href="#">荣誉资质</a><a href="#">联系我们</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 浩辰软件 版权所有 · CAD 软件正版化服务</span>
+      <span class="links"><a href="#">隐私政策</a><a href="#">网站地图</a><a href="#">联系我们</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== 右侧悬浮工具条 ===== -->
+<div class="tools">
+  <span class="tool primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></span>
+  <span class="tool"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v10"/><path d="M8 11l4 4 4-4"/><path d="M5 20h14"/></svg></span>
+  <span class="tool"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span>
+  <span class="tool"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 19V7"/><path d="M6 13l6-6 6 6"/></svg></span>
+</div>
+
+</body>
+</html>
