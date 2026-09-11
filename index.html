@@ -219,6 +219,23 @@ a{text-decoration:none;color:inherit}
 .mega-foot .quote:hover{transform:translateY(-1px)}
 @media (max-width:1240px){.mega{width:calc(100vw - 40px)}.mega-cols{grid-template-columns:repeat(2,1fr)}.mega-col:nth-child(3){border-left:none}}
 @media (max-width:900px){.mega{position:absolute;top:100%;left:12px;right:12px;width:auto;max-width:none;max-height:74vh;overflow:auto;padding-top:8px;transform:none}.menu-item.open .mega{transform:none}.mega-in{border-radius:14px;padding:18px 16px 0}.mega-cols{grid-template-columns:1fr}.mega-col{border-left:none!important;padding:0 4px 14px}.mega-col + .mega-col{border-top:1px dashed #E6EDF8;padding-top:14px}.mega-col h6{padding-left:8px}.m-sub{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;padding:0 0 0 40px;margin:0}}
+/* ===== 导航下拉：解决方案 / 案例 / 生态 / 服务 / 关于 ===== */
+.menu-item.has-drop{position:relative}
+.menu-item.has-drop .mega{left:0;width:auto;transform:translateY(6px)}
+.menu-item.has-drop.open .mega{transform:translateY(0)}
+.menu-item.has-drop .mega-in{padding:20px 20px 0}
+.menu-item.has-drop .mega-cols{grid-template-columns:1fr}
+.menu-item.has-drop .m-item{white-space:nowrap;padding:9px 10px}
+.menu-item.has-drop .mega-foot{margin:2px -20px 0;padding:13px 20px;justify-content:flex-start;gap:26px}
+.menu-item.has-drop.w-sm .mega{width:284px}
+.menu-item.has-drop.w-sm .mega-col + .mega-col{border-left:none;border-top:1px dashed #E6EDF8;padding-top:14px;margin-top:6px}
+.menu-item.has-drop.w-md .mega{width:404px}
+.menu-item.has-drop.w-md .mega-cols{grid-template-columns:1fr 1fr}
+.menu-item.has-drop.w-lg .mega{width:824px;left:50%;transform:translateX(-50%) translateY(6px)}
+.menu-item.has-drop.w-lg.open .mega{transform:translateX(-50%) translateY(0)}
+.menu-item.has-drop.w-lg .mega-cols{grid-template-columns:repeat(5,1fr)}
+@media (max-width:1240px){.menu-item.has-drop.w-lg .mega{width:min(672px,calc(100vw - 40px))}.menu-item.has-drop.w-lg .mega-cols{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:900px){.menu-item.has-drop{position:static}.menu-item.has-drop .mega,.menu-item.has-drop.w-sm .mega,.menu-item.has-drop.w-md .mega,.menu-item.has-drop.w-lg .mega{left:12px;right:12px;width:auto;max-width:none;transform:none}.menu-item.has-drop.open .mega,.menu-item.has-drop.w-sm.open .mega,.menu-item.has-drop.w-md.open .mega,.menu-item.has-drop.w-lg.open .mega{transform:none}.menu-item.has-drop .mega-cols,.menu-item.has-drop.w-md .mega-cols,.menu-item.has-drop.w-lg .mega-cols{grid-template-columns:1fr}.menu-item.has-drop .m-item{white-space:normal}.menu-item.has-drop .mega-in{padding:18px 16px 0}.menu-item.has-drop .mega-foot{margin:2px -16px 0;padding:13px 16px}}
 </style>
 </head>
 <body>
@@ -282,7 +299,128 @@ a{text-decoration:none;color:inherit}
           </div>
         </div>
       </div>
-      <a href="#">解决方案</a><a href="#">案例</a><a href="#">生态</a><a href="#">服务</a><a href="#">关于</a>
+      <div class="menu-item has-drop w-sm">
+        <a class="menu-link" href="#" aria-haspopup="true" aria-expanded="false">解决方案<i class="caret"></i></a>
+        <div class="mega">
+          <div class="mega-in">
+            <div class="mega-cols">
+              <div class="mega-col">
+                <h6>行业解决方案</h6>
+                <a class="m-item" href="https://www.gstarcad.com/genuine/"><span>政企CAD国产化解决方案</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/xinchuang/"><span>信创行业CAD解决方案</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/enterprise_v2/"><span>政企CAD正版化解决方案</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/adc/"><span>AEC全流程CAD—BIM解决方案</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item has-drop w-md">
+        <a class="menu-link" href="#" aria-haspopup="true" aria-expanded="false">案例<i class="caret"></i></a>
+        <div class="mega">
+          <div class="mega-in">
+            <div class="mega-cols">
+              <div class="mega-col">
+                <h6>制造业案例</h6>
+                <a class="m-item" href="https://www.gstarcad.com/case/458/"><span>大中电机</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/case/470/"><span>万达客车</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/case/462/"><span>同泰新能源</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/case/459/"><span>申龙电梯</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/case/419/"><span>中集圣达因</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/case/427/"><span>江丰电子</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/case/428/"><span>北自科技</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/case/431/"><span>金方圆</span></a>
+              </div>
+              <div class="mega-col">
+                <h6>工程建设行业案例</h6>
+                <a class="m-item" href="https://www.gstarcad.com/case/429/"><span>合立道设计集团</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/case/448/"><span>聚弘凯</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/case/420/"><span>川维石化</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/case/454/"><span>海口市设计集团</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/case/457/"><span>飞时达</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/case/423/"><span>国舜建设</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/case/487/"><span>中国铁建</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/case/425/"><span>广晟幕墙</span></a>
+              </div>
+            </div>
+            <div class="mega-foot">
+              <a class="all" href="https://www.gstarcad.com/case/">全部案例 →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item has-drop w-sm">
+        <a class="menu-link" href="#" aria-haspopup="true" aria-expanded="false">生态<i class="caret"></i></a>
+        <div class="mega">
+          <div class="mega-in">
+            <div class="mega-cols">
+              <div class="mega-col">
+                <h6>合作伙伴</h6>
+                <a class="m-item" href="https://www.gstarcad.com/xinchuangpartner/"><span>信创生态伙伴</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/channelpartner/"><span>渠道伙伴招募</span></a>
+              </div>
+              <div class="mega-col">
+                <h6>二次开发</h6>
+                <a class="m-item" href="https://www.gstarcad.com/application/"><span>二次开发应用软件</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/sdk_doc/"><span>开发者工具</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/developer/"><span>二次开发生态</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item has-drop w-sm">
+        <a class="menu-link" href="#" aria-haspopup="true" aria-expanded="false">服务<i class="caret"></i></a>
+        <div class="mega">
+          <div class="mega-in">
+            <div class="mega-cols">
+              <div class="mega-col">
+                <h6>产品支持</h6>
+                <a class="m-item" href="https://www.gstarcad.com/support/install/"><span>安装注册文档</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/support/help/"><span>学习帮助文档</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/support/video_tutorials/"><span>产品视频教程</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/support/article_tutorial/"><span>经验技巧资讯</span></a>
+              </div>
+              <div class="mega-col">
+                <h6>用户社区</h6>
+                <a class="m-item" href="https://www.gstarcad.com/ask/"><span>浩辰问答社区</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-item has-drop w-lg">
+        <a class="menu-link" href="#" aria-haspopup="true" aria-expanded="false">关于<i class="caret"></i></a>
+        <div class="mega">
+          <div class="mega-in">
+            <div class="mega-cols">
+              <div class="mega-col">
+                <h6>关于浩辰</h6>
+                <a class="m-item" href="https://www.gstarcad.com/about/"><span>公司介绍</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/about/development/"><span>发展历程</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/about/honor/"><span>荣誉资质</span></a>
+              </div>
+              <div class="mega-col">
+                <h6>新闻资讯</h6>
+                <a class="m-item" href="https://www.gstarcad.com/news/"><span>资讯中心</span></a>
+                <a class="m-item" href="https://www.gstarcad.com/news/industry/"><span>市场活动</span></a>
+              </div>
+              <div class="mega-col">
+                <h6>投资者关系</h6>
+                <a class="m-item" href="https://www.gstarcad.com/investor/"><span>投资者关系</span></a>
+              </div>
+              <div class="mega-col">
+                <h6>人才招聘</h6>
+                <a class="m-item" href="https://www.gstarcad.com/joinus/"><span>人才招聘</span></a>
+              </div>
+              <div class="mega-col">
+                <h6>联系我们</h6>
+                <a class="m-item" href="https://www.gstarcad.com/contact/"><span>联系我们</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
     <div class="nav-right">
       <span class="icon-btn"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></span>
@@ -666,23 +804,39 @@ a{text-decoration:none;color:inherit}
 
 <script>
 (function(){
-  var item = document.querySelector('.menu-item.has-mega');
-  if(!item) return;
-  var link = item.querySelector('.menu-link');
-  var timer = null;
-  function open(){ clearTimeout(timer); item.classList.add('open'); link.setAttribute('aria-expanded','true'); }
-  function close(){ item.classList.remove('open'); link.setAttribute('aria-expanded','false'); }
-  item.addEventListener('mouseenter', open);
-  item.addEventListener('mouseleave', function(){ clearTimeout(timer); timer = setTimeout(close, 150); });
-  link.addEventListener('click', function(e){
-    e.preventDefault();
-    var hoverUI = window.matchMedia('(hover:hover) and (min-width:901px)').matches;
-    if (hoverUI) return;   // 桌面端由 hover 控制
-    open();                // 触屏/窄屏：点击展开，点空白处或 Esc 收起
+  var items = Array.prototype.slice.call(document.querySelectorAll('.menu-item.has-mega, .menu-item.has-drop'));
+  if(!items.length) return;
+  function isHoverUI(){ return window.matchMedia('(hover:hover) and (min-width:901px)').matches; }
+  function close(item){
+    var link = item.querySelector('.menu-link');
+    item.classList.remove('open');
+    if(link) link.setAttribute('aria-expanded','false');
+  }
+  items.forEach(function(item){
+    var link = item.querySelector('.menu-link');
+    var timer = null;
+    function open(){
+      clearTimeout(timer);
+      items.forEach(function(o){ if(o !== item) close(o); });
+      item.classList.add('open');
+      if(link) link.setAttribute('aria-expanded','true');
+    }
+    item.addEventListener('mouseenter', function(){ if(isHoverUI()) open(); });
+    item.addEventListener('mouseleave', function(){
+      if(!isHoverUI()) return;
+      clearTimeout(timer);
+      timer = setTimeout(function(){ close(item); }, 150);
+    });
+    if(link) link.addEventListener('click', function(e){
+      e.preventDefault();
+      if(isHoverUI()) return;              // 桌面端由 hover 控制
+      if(item.classList.contains('open')) close(item); else open();   // 触屏/窄屏：点击切换
+    });
   });
-  document.addEventListener('click', function(e){ if(!item.contains(e.target)) close(); });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
-  item.querySelectorAll('.mega a').forEach(function(a){ a.addEventListener('click', function(){ /* demo links */ }); });
+  document.addEventListener('click', function(e){
+    items.forEach(function(item){ if(!item.contains(e.target)) close(item); });
+  });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') items.forEach(function(item){ close(item); }); });
 })();
 </script>
 
