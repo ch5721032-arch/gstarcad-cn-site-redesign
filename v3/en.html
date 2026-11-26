@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GstarCAD Website Redesign Prototype · Overseas Edition</title>
+<meta name="description" content="Multi-page high-fidelity prototype for the GstarCAD overseas website redesign.">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="assets/prototype.css">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 1.7 4.6L18 9.3l-4.3 1.7L12 15.6l-1.7-4.6L6 9.3l4.3-1.7L12 3z"/><path d="M19 14l.7 1.9L21.6 17l-1.9.7L19 19.6l-.7-1.9L16.4 17l1.9-.7L19 14z"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 9h1M14 9h1M9 13h1M14 13h1M9 17h1M14 17h1"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></symbol>
+  <symbol id="i-factory" viewBox="0 0 24 24"><path d="M2 21h20M4 21V9l6 4V9l6 4V9l4 3v9"/><path d="M8 17h.01M12 17h.01M16 17h.01"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m20 6-11 11-5-5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.9 2z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.2-6.2 3.2L7 14.2 2 9.3l6.9-1L12 2z"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9l2-5h14l2 5"/><path d="M3 9h18v11H3z"/><path d="M9 20v-6h6v6"/></symbol>
+</svg>
+
+<div class="proto-bar">
+  <div class="proto-inner">
+    <span class="proto-label">PROTOTYPE · OVERSEAS</span>
+    <nav class="proto-tabs" aria-label="Prototype page navigation">
+      <button data-target="home" class="on">Home</button>
+      <button data-target="product">Products &amp; Downloads</button>
+      <button data-target="download">Download Center</button>
+      <button data-target="detail">Product Detail</button>
+      <button data-target="industry">Industries &amp; Customers</button>
+      <button data-target="pricing">Pricing</button>
+      <button data-target="store">Store</button>
+      <button data-target="partners">Partners</button>
+      <button data-target="mobile">Mobile</button>
+    </nav>
+    <a class="proto-switch" href="cn.html">中文 ↗</a>
+  </div>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-inner">
+    <a class="logo" href="#home" data-page="home" aria-label="GstarCAD home">
+      <span class="logo-mark">G</span>
+      <span class="logo-text"><strong>GstarCAD</strong><span>GSTARSOFT</span></span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <div class="nav-item has-mega">
+        <button class="nav-link" aria-expanded="false">Products &amp; Downloads <svg class="icon"><use href="#i-chevron"/></svg></button>
+        <div class="mega">
+          <div class="mega-in">
+            <div class="mega-grid">
+              <div>
+                <div class="mega-col-title">By use case</div>
+                <div class="mega-list">
+                  <a href="#industry" data-page="industry">Architecture &amp; AEC <span>Solution</span></a>
+                  <a href="#industry" data-page="industry">MEP <span>Solution</span></a>
+                  <a href="#industry" data-page="industry">Electrical <span>Solution</span></a>
+                  <a href="#industry" data-page="industry">Manufacturing <span>Solution</span></a>
+                  <a href="#industry" data-page="industry">Infrastructure <span>Light</span></a>
+                </div>
+              </div>
+              <div>
+                <div class="mega-ai">
+                  <div class="mega-ai-head"><strong>AI APPLICATIONS</strong><span class="tag-new">NEW</span></div>
+                  <div class="ai-grid">
+                    <a class="ai-mini" href="#product" data-page="product"><b>GstarRender</b><span>AI rendering</span></a>
+                    <a class="ai-mini" href="#product" data-page="product"><b>AI Assistant</b><span>Natural language</span></a>
+                    <a class="ai-mini" href="#product" data-page="product"><b>Image to CAD</b><span>Scan to DWG</span></a>
+                    <a class="ai-mini" href="#product" data-page="product"><b>AI Design Agent</b><span>Concept to plan</span></a>
+                  </div>
+                </div>
+                <div class="mega-col-title">CAD / BIM PRODUCTS</div>
+                <div class="mega-cad">
+                  <a href="#product" data-page="product"><i></i>GstarCAD Platform</a>
+                  <a href="#product" data-page="product"><i></i>GstarCAD Architecture</a>
+                  <a href="#product" data-page="product"><i></i>GstarCAD Mechanical</a>
+                  <a href="#product" data-page="product"><i></i>GstarBIM</a>
+                  <a href="#product" data-page="product"><i></i>GstarCAD 3D</a>
+                  <a href="#product" data-page="product"><i></i>GstarCAD Viewer</a>
+                </div>
+              </div>
+              <div class="mega-focus">
+                <span class="tag-new">FEATURED</span>
+                <h3>GstarCAD 2027 Pro</h3>
+                <p>Professional CAD with full DWG support. Own it once, own it forever.</p>
+                <a href="#detail" data-page="detail">View product <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+              </div>
+            </div>
+            <div class="mega-foot">
+              <a class="hot" href="#download" data-page="download"><svg class="icon icon-sm"><use href="#i-download"/></svg>Download Center</a>
+              <a href="#pricing" data-page="pricing">Pricing</a>
+              <a href="#product" data-page="product">Free Online Tools</a>
+              <a href="#product" data-page="product">All products</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item has-mega">
+        <button class="nav-link" aria-expanded="false">Industries &amp; Customers <svg class="icon"><use href="#i-chevron"/></svg></button>
+        <div class="mega">
+          <div class="mega-in">
+            <div class="mega-grid" style="grid-template-columns:1fr 1fr 1fr">
+              <div><div class="mega-col-title">AEC</div><div class="mega-list"><a href="#industry" data-page="industry">Architecture</a><a href="#industry" data-page="industry">MEP</a><a href="#industry" data-page="industry">Electrical</a><a href="#industry" data-page="industry">Infrastructure</a></div></div>
+              <div><div class="mega-col-title">Manufacturing</div><div class="mega-list"><a href="#industry" data-page="industry">Machinery</a><a href="#industry" data-page="industry">Equipment</a><a href="#industry" data-page="industry">Automotive</a><a href="#industry" data-page="industry">Electronics</a></div></div>
+              <div><div class="mega-col-title">Customer stories</div><div class="mega-list"><a href="#industry" data-page="industry">All case studies</a><a href="#industry" data-page="industry">Filter by industry</a><a href="#industry" data-page="industry">Filter by region</a></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item has-mega">
+        <button class="nav-link" aria-expanded="false">Partners <svg class="icon"><use href="#i-chevron"/></svg></button>
+        <div class="mega">
+          <div class="mega-in">
+            <div class="mega-grid" style="grid-template-columns:1fr 1fr 1fr">
+              <div><div class="mega-col-title">Buy locally</div><div class="mega-list"><a href="#partners" data-page="partners">Find a Reseller</a><a href="#partners" data-page="partners">Become a Reseller</a></div></div>
+              <div><div class="mega-col-title">Solution apps</div><div class="mega-list"><a href="#partners" data-page="partners">Solution Apps</a><a href="#partners" data-page="partners">Become an ISV</a></div></div>
+              <div><div class="mega-col-title">Developers</div><div class="mega-list"><a href="#partners" data-page="partners">Developer Center</a><a href="#partners" data-page="partners">APIs &amp; SDKs</a></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item has-mega">
+        <button class="nav-link" aria-expanded="false">Support <svg class="icon"><use href="#i-chevron"/></svg></button>
+        <div class="mega">
+          <div class="mega-in">
+            <div class="mega-grid" style="grid-template-columns:1fr 1fr 1fr">
+              <div><div class="mega-col-title">Get started</div><div class="mega-list"><a href="#download" data-page="download">Download Center</a><a href="#download" data-page="download">Installation</a></div></div>
+              <div><div class="mega-col-title">Learn</div><div class="mega-list"><a href="#detail" data-page="detail">Knowledge Hub</a><a href="#detail" data-page="detail">Video tutorials</a></div></div>
+              <div><div class="mega-col-title">Free tools</div><div class="mega-list"><a href="#product" data-page="product">PDF to DWG</a><a href="#product" data-page="product">DWG Viewer</a></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item has-mega">
+        <button class="nav-link" aria-expanded="false">About <svg class="icon"><use href="#i-chevron"/></svg></button>
+        <div class="mega">
+          <div class="mega-in">
+            <div class="mega-grid" style="grid-template-columns:1fr 1fr">
+              <div><div class="mega-col-title">Company</div><div class="mega-list"><a href="#home" data-page="home">About Gstarsoft</a><a href="#home" data-page="home">Global presence</a><a href="#home" data-page="home">News</a></div></div>
+              <div><div class="mega-col-title">Contact</div><div class="mega-list"><a href="#partners" data-page="partners">Find a Reseller</a><a href="#home" data-page="home">Contact us</a></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" aria-label="Search"><svg class="icon"><use href="#i-search"/></svg></button>
+      <a class="btn btn-ghost" href="#home" data-page="home" data-scroll="trial">Free Trial</a>
+      <a class="btn btn-primary" href="#store" data-page="store">Store ↗</a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav"><svg class="icon"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ================= HOME ================= -->
+  <section class="page active" id="page-home">
+    <div class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow" style="color:#AFC8FF">PERPETUAL LICENSE · FULL DWG SUPPORT · LOCAL RESELLERS</div>
+          <h1>GstarCAD 2027<span>Own it once. Own it forever.</span></h1>
+          <p class="hero-lead">Professional 2D/3D CAD with full DWG compatibility. Open existing drawings, keep your workflows, and avoid recurring subscription costs.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#home" data-page="home" data-scroll="trial">Start Free Trial <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-glass" href="#store" data-page="store">Buy in Store ↗</a>
+          </div>
+          <div class="hero-stats">
+            <div><b>20+</b><span>years in CAD</span></div>
+            <div><b>1M+</b><span>users worldwide</span></div>
+            <div><b>90+</b><span>countries</span></div>
+            <div><b>4.5/5</b><span>G2 rating</span></div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="cad-window">
+            <div class="cad-bar"><span class="cad-dots"><i></i><i></i><i></i></span><span class="cad-file">project-plan.dwg</span></div>
+            <div class="cad-body">
+              <div class="cad-tools"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="cad-canvas">
+                <div class="grid"></div>
+                <svg viewBox="0 0 520 360" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <g stroke="rgba(150,185,235,.75)" stroke-width="1.4">
+                    <path d="M60 60h150v110H60z"/><path d="M210 60h120v70H210z"/><path d="M330 60h120v110H330z"/>
+                    <path d="M60 170h170v120H60z"/><path d="M230 130h100v160H230z"/><path d="M330 170h120v120H330z"/>
+                    <circle cx="285" cy="210" r="26"/><path d="M259 210h-18M311 210h18M285 184v-18M285 236v18"/>
+                    <path d="M80 210h34M126 210h34M80 210v34M126 210v34"/>
+                  </g>
+                  <g fill="rgba(175,200,255,.9)" font-family="monospace" font-size="10"><text x="98" y="52">7200</text><text x="350" y="52">3600</text><text x="30" y="136">4200</text><text x="252" y="258">R26</text></g>
+                  <g stroke="rgba(30,94,232,.95)" stroke-width="1.6"><path d="M60 60h150v110H60z"/><path d="M230 130h100v160H230z"/></g>
+                  <g fill="#AFC8FF"><rect x="55" y="55" width="7" height="7"/><rect x="205" y="55" width="7" height="7"/><rect x="55" y="165" width="7" height="7"/><rect x="205" y="165" width="7" height="7"/><rect x="225" y="125" width="7" height="7"/><rect x="325" y="125" width="7" height="7"/></g>
+                </svg>
+              </div>
+              <div class="cad-props"><b>PROPERTIES</b><span>Layer <i>WALL</i></span><span>Linetype <i>CONTINUOUS</i></span><span>Color <i>BYLAYER</i></span><span>Unit <i>mm</i></span></div>
+            </div>
+            <div class="cad-command"><b>Command:</b> _LINE Specify first point</div>
+          </div>
+          <div class="float-chip one"><svg class="icon"><use href="#i-file"/></svg><span>Full DWG support<small>Open legacy drawings</small></span></div>
+          <div class="float-chip two"><svg class="icon"><use href="#i-shield"/></svg><span>Perpetual license<small>No recurring fees</small></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- trust strip -->
+    <section class="section tight">
+      <div class="container">
+        <div class="logo-strip" style="border-top:0">
+          <span class="label">RATED BY PROFESSIONALS</span>
+          <ul><li>G2 4.5/5</li><li>Capterra 4.6/5</li><li>120+ verified reviews</li><li>Trusted by 1M+ users</li></ul>
+        </div>
+        <div class="case-grid" style="margin-top:18px">
+          <a class="case-card" href="#industry" data-page="industry"><span class="case-client">Manufacturing</span><div class="case-metric">15%<small>faster design</small></div><p>Legacy drawings open directly. New product introduction cycles are shorter.</p><span>Read story <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+          <a class="case-card" href="#industry" data-page="industry"><span class="case-client">AEC</span><div class="case-metric">On time<small>project delivery</small></div><p>Local support responds quickly and keeps projects on schedule.</p><span>Read story <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+          <a class="case-card" href="#industry" data-page="industry"><span class="case-client">Equipment</span><div class="case-metric">Seamless<small>data migration</small></div><p>Multi-version, multi-format drawings migrate without rework.</p><span>Read story <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- industries -->
+    <section class="section soft">
+      <div class="container">
+        <div class="sec-head"><div><div class="section-label">INDUSTRIES</div><h2>Built for AEC and manufacturing</h2><p>Two industry groups, each with the workflows, product combinations and customer evidence buyers actually evaluate.</p></div><a class="side-link" href="#industry" data-page="industry">Explore industries <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a></div>
+        <div class="split">
+          <a class="panel" href="#industry" data-page="industry" style="display:block"><span class="pill pill-blue">AEC</span><h3 style="margin-top:12px">Architecture, engineering and construction</h3><p>Architecture, MEP, electrical and infrastructure workflows. DWG compatibility, multi-discipline coordination and local support.</p><div class="page-actions"><span class="btn btn-primary">View AEC solutions</span></div></a>
+          <a class="panel" href="#industry" data-page="industry" style="display:block"><span class="pill pill-amber">MANUFACTURING</span><h3 style="margin-top:12px">Machinery, equipment and product design</h3><p>Legacy drawing compatibility, mechanical drafting and manufacturing workflows. Keep existing data and avoid subscription lock-in.</p><div class="page-actions"><span class="btn btn-dark">View manufacturing</span></div></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- products -->
+    <section class="section">
+      <div class="container">
+        <div class="sec-head"><div><div class="section-label">PRODUCTS</div><h2>AI first, CAD/BIM right behind</h2><p>The AI matrix is a narrow band at the top. CAD/BIM products remain visible in the first screen, so the main conversion path is not pushed down.</p></div><a class="side-link" href="#product" data-page="product">All products <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a></div>
+        <div class="product-block">
+          <div class="block-head"><h3>AI applications <span class="tag-new">NEW</span><span class="sub">One compact row</span></h3><a class="side-link" href="#product" data-page="product">Explore AI <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a></div>
+          <div class="ai-grid-4">
+            <a class="ai-card" href="#product" data-page="product"><div class="ai-card-top"><svg class="icon"><use href="#i-spark"/></svg><span class="tag-new">NEW</span></div><h4>GstarRender</h4><p>Generate presentation-ready renders from your CAD model.</p><span>Learn more <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="ai-card" href="#product" data-page="product"><div class="ai-card-top"><svg class="icon"><use href="#i-spark"/></svg><span class="tag-new">NEW</span></div><h4>AI Assistant</h4><p>Natural-language commands that lower the learning curve.</p><span>Learn more <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="ai-card" href="#product" data-page="product"><div class="ai-card-top"><svg class="icon"><use href="#i-spark"/></svg><span class="tag-new">NEW</span></div><h4>Image to CAD</h4><p>Convert scans and photos into editable DWG geometry.</p><span>Learn more <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="ai-card" href="#product" data-page="product"><div class="ai-card-top"><svg class="icon"><use href="#i-spark"/></svg><span class="tag-new">NEW</span></div><h4>AI Design Agent</h4><p>Move from requirements to concept layouts faster.</p><span>Learn more <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+          </div>
+        </div>
+        <div class="product-block">
+          <div class="block-head"><h3>CAD / BIM products <span class="sub">Platform + industry tools</span></h3><a class="side-link" href="#product" data-page="product">View all <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a></div>
+          <div class="product-grid">
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">2D CAD PLATFORM</span><h4>GstarCAD Platform</h4><p>Professional 2D CAD with full DWG compatibility.</p><span>Learn more <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">ARCHITECTURE</span><h4>GstarCAD Architecture</h4><p>Architectural drafting, documentation and detailing.</p><span>Learn more <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">MECHANICAL</span><h4>GstarCAD Mechanical</h4><p>Parts, assemblies, dimensions and BOM workflows.</p><span>Learn more <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">BIM SOLUTION</span><h4>GstarBIM</h4><p>BIM coordination and model-based collaboration.</p><span>Learn more <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">3D CAD</span><h4>GstarCAD 3D</h4><p>3D modelling, assemblies and drawing output.</p><span>Learn more <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">VIEWER</span><h4>GstarCAD Viewer</h4><p>View, mark up and share drawings across devices.</p><span>Learn more <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- why -->
+    <section class="section soft">
+      <div class="container">
+        <div class="sec-head"><div><div class="section-label">WHY GSTARCAD</div><h2>Why teams switch</h2><p>Overseas buyers care about subscription cost, DWG compatibility and local presence. Lead with those three.</p></div></div>
+        <div class="feature-grid">
+          <div class="feature-card"><svg class="icon"><use href="#i-shield"/></svg><h3>Perpetual license</h3><p>Buy once and own it. Avoid recurring subscription costs and keep long-term budget predictable.</p></div>
+          <div class="feature-card"><svg class="icon"><use href="#i-file"/></svg><h3>Full DWG support</h3><p>Open legacy drawings, keep your workflows and exchange files with partners without conversion loss.</p></div>
+          <div class="feature-card"><svg class="icon"><use href="#i-globe"/></svg><h3>Local resellers</h3><p>Find a local partner for quotes, invoices, implementation and after-sales support.</p></div>
+        </div>
+        <div class="panel" style="margin-top:16px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+          <div><h3 style="font-size:18px">Free online tools</h3><p>PDF to DWG, DWG viewer and other free tools bring high-intent search traffic and give users a low-friction first step.</p></div>
+          <a class="btn btn-primary" href="#product" data-page="product">Explore free tools <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- global -->
+    <section class="section">
+      <div class="container">
+        <div class="split">
+          <div><div class="section-label">GLOBAL PRESENCE</div><h2 style="font-size:32px;margin-top:9px">Local presence matters</h2><p style="font-size:14px;color:var(--muted);line-height:1.8;margin-top:10px">90+ countries, 200+ partners and local support. Find a reseller near you for pricing, invoices and implementation.</p><div class="page-actions"><a class="btn btn-primary" href="#partners" data-page="partners">Find a Reseller</a><a class="btn btn-ghost" href="#partners" data-page="partners">Become a Partner</a></div></div>
+          <div class="reseller-grid" style="grid-template-columns:1fr 1fr">
+            <div class="reseller-card"><span class="flag">NORTH AMERICA</span><h3>Local partners</h3><p>Quotes, implementation and support.</p></div>
+            <div class="reseller-card"><span class="flag">EUROPE</span><h3>Local partners</h3><p>Quotes, implementation and support.</p></div>
+            <div class="reseller-card"><span class="flag">APAC</span><h3>Local partners</h3><p>Quotes, implementation and support.</p></div>
+            <div class="reseller-card"><span class="flag">LATAM</span><h3>Local partners</h3><p>Quotes, implementation and support.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- conversion -->
+    <section class="section soft" id="contact">
+      <div class="container">
+        <div class="sec-head"><div><div class="section-label">NEXT STEP</div><h2>Start with a free trial, or buy online</h2><p>No sign-up required for the trial. Buy online in supported regions, or contact a local reseller where the product is sold through partners.</p></div></div>
+        <div class="split">
+          <div class="panel dark" id="trial">
+            <span class="tag-new" style="background:rgba(255,255,255,.1);color:#FFD9A3">FREE TRIAL</span>
+            <h3 style="margin-top:12px">Try GstarCAD free</h3>
+            <p>Download directly. No registration wall, no credit card.</p>
+            <ul class="check-list">
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>Full features for evaluation</li>
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>No sign-up required</li>
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>Open your existing DWG files</li>
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>Keep project data after trial</li>
+            </ul>
+            <a class="btn btn-primary" style="margin-top:18px;width:100%" href="#download" data-page="download">Download Free Trial <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+          </div>
+          <div class="panel">
+            <h3>Buy online or find a reseller</h3>
+            <p>All products are visible in the Store. Your region determines whether you can buy online or should contact a local partner.</p>
+            <div class="store-grid" style="grid-template-columns:1fr;margin-top:14px">
+              <a class="store-card" href="#store" data-page="store"><span class="state state-buy">BUY ONLINE</span><h3>GstarCAD 2027 Pro</h3><p>Perpetual license. Instant checkout in supported regions.</p><div class="row"><span class="price">From $699 <small>sample</small></span><span class="btn btn-primary" style="height:32px;font-size:12px;padding:0 12px">Buy now</span></div></a>
+              <a class="store-card" href="#partners" data-page="partners"><span class="state state-reseller">AVAILABLE FROM RESELLER</span><h3>GstarCAD Architecture</h3><p>Sold through local partners in your region.</p><div class="row"><span class="price" style="font-size:13px">Contact local partner</span><span class="btn btn-ghost" style="height:32px;font-size:12px;padding:0 12px">Find reseller</span></div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ================= PRODUCTS & DOWNLOADS ================= -->
+  <section class="page" id="page-product">
+    <div class="page-head">
+      <div class="container">
+        <div class="breadcrumb"><a href="#home" data-page="home">Home</a><span>/</span><span>Products &amp; Downloads</span></div>
+        <h1 class="page-title">Products &amp; Downloads</h1>
+        <p class="page-lead">One product overview, AI applications on top, CAD/BIM right behind. Pricing and free tools are visible without stuffing 50+ links into the navigation.</p>
+        <div class="page-actions"><a class="btn btn-primary" href="#download" data-page="download">Download Center <svg class="icon icon-sm"><use href="#i-download"/></svg></a><a class="btn btn-ghost" href="#pricing" data-page="pricing">View pricing</a></div>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="product-block">
+          <div class="block-head"><h3>AI applications <span class="tag-new">NEW</span></h3></div>
+          <div class="ai-grid-4">
+            <a class="ai-card" href="#detail" data-page="detail"><div class="ai-card-top"><svg class="icon"><use href="#i-spark"/></svg><span class="tag-new">NEW</span></div><h4>GstarRender</h4><p>AI rendering and visualisation.</p><span>Learn more <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="ai-card" href="#detail" data-page="detail"><div class="ai-card-top"><svg class="icon"><use href="#i-spark"/></svg><span class="tag-new">NEW</span></div><h4>AI Assistant</h4><p>Natural-language CAD commands.</p><span>Learn more <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="ai-card" href="#detail" data-page="detail"><div class="ai-card-top"><svg class="icon"><use href="#i-spark"/></svg><span class="tag-new">NEW</span></div><h4>Image to CAD</h4><p>Scan or photo to editable DWG.</p><span>Learn more <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="ai-card" href="#detail" data-page="detail"><div class="ai-card-top"><svg class="icon"><use href="#i-spark"/></svg><span class="tag-new">NEW</span></div><h4>AI Design Agent</h4><p>Requirements to concept layouts.</p><span>Learn more <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+          </div>
+        </div>
+        <div class="product-block">
+          <div class="block-head"><h3>CAD / BIM products</h3></div>
+          <div class="product-grid">
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">2D CAD PLATFORM</span><h4>GstarCAD Platform</h4><p>Professional 2D CAD with full DWG support.</p><span>Learn more <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">ARCHITECTURE</span><h4>GstarCAD Architecture</h4><p>Architectural drafting and documentation.</p><span>Learn more <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">MECHANICAL</span><h4>GstarCAD Mechanical</h4><p>Parts, assemblies and BOM.</p><span>Learn more <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">BIM SOLUTION</span><h4>GstarBIM</h4><p>BIM coordination and collaboration.</p><span>Learn more <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">3D CAD</span><h4>GstarCAD 3D</h4><p>3D modelling and drawing output.</p><span>Learn more <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">VIEWER</span><h4>GstarCAD Viewer</h4><p>View, mark up and share drawings.</p><span>Learn more <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+          </div>
+        </div>
+        <div class="feature-grid" style="margin-top:16px">
+          <a class="feature-card" href="#pricing" data-page="pricing"><svg class="icon"><use href="#i-shield"/></svg><h3>Pricing &amp; licensing</h3><p>Perpetual vs subscription, version comparison and multi-currency pricing.</p></a>
+          <a class="feature-card" href="#download" data-page="download"><svg class="icon"><use href="#i-download"/></svg><h3>Download Center</h3><p>No sign-up required. Direct download for supported operating systems.</p></a>
+          <a class="feature-card" href="#product" data-page="product"><svg class="icon"><use href="#i-grid"/></svg><h3>Free Online Tools</h3><p>PDF to DWG, DWG viewer and other high-intent tools.</p></a>
+        </div>
+        <div class="download-strip"><div><h3>Download Center: no registration wall</h3><p>Pick your OS, download directly and start evaluating in minutes.</p></div><div class="actions"><a class="btn btn-primary" href="#download" data-page="download">Download now <svg class="icon icon-sm"><use href="#i-download"/></svg></a><a class="btn btn-white" href="#pricing" data-page="pricing">View pricing</a></div></div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ================= DOWNLOAD ================= -->
+  <section class="page" id="page-download">
+    <div class="page-head">
+      <div class="container">
+        <div class="breadcrumb"><a href="#home" data-page="home">Home</a><span>/</span><span>Download Center</span></div>
+        <h1 class="page-title">Download Center</h1>
+        <p class="page-lead">No sign-up required. Choose your operating system, download directly and start a free trial without a registration wall.</p>
+        <div class="page-actions"><span class="pill pill-blue">NO SIGN-UP REQUIRED</span><span class="pill pill-light">Direct download</span></div>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="split">
+          <div class="panel">
+            <h3>Choose your operating system</h3>
+            <p>We detect your current device automatically. You can switch manually.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px"><span class="pill pill-blue">Windows · detected</span><span class="pill pill-light">Linux</span><span class="pill pill-light">macOS</span></div>
+            <div class="form-grid" style="margin-top:16px"><div class="field full"><label>Version</label><select><option>GstarCAD 2027 Pro</option><option>GstarCAD 2027 Standard</option><option>GstarCAD 2026</option></select></div></div>
+            <div class="form-foot"><small>No name, email, phone or company required.</small><button class="btn btn-primary" type="button">Download Free Trial <svg class="icon icon-sm"><use href="#i-download"/></svg></button></div>
+          </div>
+          <div class="panel soft">
+            <h3>What happens after download</h3>
+            <p>Keep the momentum. Give users installation help, compatibility checks and a clear next step.</p>
+            <ul class="check-list">
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>Installation guide and FAQ</li>
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>DWG compatibility check</li>
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>Video tutorials</li>
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>Buy online or find a reseller</li>
+            </ul>
+            <a class="btn btn-ghost" style="margin-top:16px" href="#pricing" data-page="pricing">View pricing</a>
+          </div>
+        </div>
+        <div class="sec-head" style="margin-top:44px"><div><div class="section-label">HISTORY</div><h2>Previous versions</h2><p>Legacy projects need legacy versions. Keep the official download in one place.</p></div></div>
+        <div class="table-wrap"><table class="data-table"><thead><tr><th>Version</th><th>Released</th><th>Best for</th><th>Download</th></tr></thead><tbody><tr><td class="strong">GstarCAD 2027</td><td>2026</td><td>New projects</td><td><a href="#">Download</a></td></tr><tr><td class="strong">GstarCAD 2026</td><td>2025</td><td>Legacy projects</td><td><a href="#">Download</a></td></tr><tr><td class="strong">GstarCAD 2025</td><td>2024</td><td>Long-term maintenance</td><td><a href="#">Download</a></td></tr></tbody></table></div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ================= DETAIL ================= -->
+  <section class="page" id="page-detail">
+    <div class="page-head">
+      <div class="container">
+        <div class="breadcrumb"><a href="#home" data-page="home">Home</a><span>/</span><a href="#product" data-page="product">Products</a><span>/</span><span>GstarCAD</span></div>
+        <h1 class="page-title">Buy it once. Own it forever.</h1>
+        <p class="page-lead">Full DWG compatibility first, then capabilities, industries, licensing and FAQ. The same template as the Chinese product page, with different narrative and trust signals.</p>
+        <div class="page-actions"><a class="btn btn-primary" href="#download" data-page="download">Start Free Trial</a><a class="btn btn-ghost" href="#store" data-page="store">Buy in Store ↗</a></div>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="split">
+          <div class="panel">
+            <h3>Compatibility first</h3>
+            <p>Open existing DWG files without conversion loss. Keep layers, fonts, line types and workflows intact.</p>
+            <ul class="check-list">
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>DWG 2018 / 2013 / 2010 / 2007 / 2004</li>
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>Existing shortcuts and commands</li>
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>Common third-party plugins</li>
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>Fonts, layers and line types preserved</li>
+            </ul>
+            <a class="btn btn-primary" style="margin-top:16px" href="#download" data-page="download">Try with your drawings</a>
+          </div>
+          <div class="panel soft">
+            <h3>Capabilities</h3>
+            <p>2D drafting, editing, dimensions, layers, blocks, external references and plotting.</p>
+            <div class="industry-grid" style="grid-template-columns:1fr 1fr;margin-top:14px"><span class="pill pill-blue">2D drafting</span><span class="pill pill-blue">Dimensions</span><span class="pill pill-blue">Layers &amp; blocks</span><span class="pill pill-blue">Xrefs</span><span class="pill pill-blue">Plotting</span><span class="pill pill-blue">Collaboration</span></div>
+          </div>
+        </div>
+        <div class="sec-head" style="margin-top:44px"><div><div class="section-label">LICENSING</div><h2>Perpetual vs subscription</h2><p>Perpetual licensing is the structural difference. Show it clearly, with a path to buy online or through a reseller.</p></div></div>
+        <div class="table-wrap"><table class="data-table"><thead><tr><th>Option</th><th>Best for</th><th>Cost pattern</th><th>Ownership</th><th>Next step</th></tr></thead><tbody><tr><td class="strong">Perpetual license</td><td>Long-term teams</td><td>One-time purchase</td><td>Own the license</td><td><a href="#store" data-page="store">Buy in Store</a></td></tr><tr><td class="strong">Subscription</td><td>Short projects</td><td>Recurring payment</td><td>Rental</td><td><a href="#store" data-page="store">View options</a></td></tr><tr><td class="strong">Reseller quote</td><td>Restricted regions</td><td>Local quote</td><td>Depends on partner</td><td><a href="#partners" data-page="partners">Find a Reseller</a></td></tr></tbody></table></div>
+        <div class="panel" style="margin-top:16px"><h3>FAQ</h3><p><strong>Can I open existing DWG files?</strong> Yes. GstarCAD supports the mainstream DWG versions; test with your own drawings.</p><p style="margin-top:8px"><strong>Do I need a subscription?</strong> No. Perpetual licenses are available. Subscription options exist for short-term needs.</p><p style="margin-top:8px"><strong>Can I buy in my country?</strong> All products are visible in the Store. Your region determines whether you can buy online or should contact a reseller.</p></div>
+      </div>
+    </section>
+    <div class="cta-band"><div class="container inner"><div><h2>Try it with your own drawings</h2><p>No sign-up required. Download and evaluate in minutes.</p></div><div class="actions"><a class="btn btn-primary" href="#download" data-page="download">Free Trial</a><a class="btn btn-glass" href="#store" data-page="store">Buy in Store ↗</a></div></div></div>
+  </section>
+
+  <!-- ================= INDUSTRIES ================= -->
+  <section class="page" id="page-industry">
+    <div class="page-head">
+      <div class="container">
+        <div class="breadcrumb"><a href="#home" data-page="home">Home</a><span>/</span><span>Industries &amp; Customers</span></div>
+        <h1 class="page-title">Industries &amp; Customers</h1>
+        <p class="page-lead">Two industry groups, not eight thin pages. AEC and Manufacturing each have their own workflows, product combinations and customer evidence.</p>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="split">
+          <a class="panel" href="#industry" data-page="industry" style="display:block"><span class="pill pill-blue">AEC</span><h3 style="margin-top:12px">Architecture, engineering and construction</h3><p>Architecture, MEP, electrical and infrastructure. Multi-discipline coordination and DWG compatibility.</p><div class="page-actions"><span class="btn btn-primary">View AEC solutions</span></div></a>
+          <a class="panel" href="#industry" data-page="industry" style="display:block"><span class="pill pill-amber">MANUFACTURING</span><h3 style="margin-top:12px">Machinery, equipment and product design</h3><p>Legacy drawing compatibility, mechanical drafting and manufacturing workflows.</p><div class="page-actions"><span class="btn btn-dark">View manufacturing</span></div></a>
+        </div>
+        <div class="sec-head" style="margin-top:46px"><div><div class="section-label">CUSTOMER STORIES</div><h2>Proof from real projects</h2><p>Filter by industry, company size and region.</p></div></div>
+        <div class="case-grid">
+          <a class="case-card" href="#industry" data-page="industry"><span class="case-client">Manufacturing</span><div class="case-metric">15%<small>faster design</small></div><p>Legacy drawings open directly. New product introduction is faster.</p><span>Read story <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+          <a class="case-card" href="#industry" data-page="industry"><span class="case-client">AEC</span><div class="case-metric">On time<small>delivery</small></div><p>Local support keeps project milestones on track.</p><span>Read story <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+          <a class="case-card" href="#industry" data-page="industry"><span class="case-client">Equipment</span><div class="case-metric">Seamless<small>migration</small></div><p>Multi-version drawings migrate without rework.</p><span>Read story <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+          <a class="case-card" href="#industry" data-page="industry"><span class="case-client">Electrical</span><div class="case-metric">Integrated<small>workflow</small></div><p>Electrical drawings and schedules stay connected.</p><span>Read story <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ================= PRICING ================= -->
+  <section class="page" id="page-pricing">
+    <div class="page-head">
+      <div class="container">
+        <div class="breadcrumb"><a href="#home" data-page="home">Home</a><span>/</span><span>Pricing</span></div>
+        <h1 class="page-title">Pricing &amp; licensing</h1>
+        <p class="page-lead">The official pricing page lives on the website for SEO and evaluation. Transactions happen in the Store. Prices shown below are sample values for the prototype.</p>
+        <div class="page-actions"><a class="btn btn-primary" href="#store" data-page="store">Buy in Store ↗</a><a class="btn btn-ghost" href="#partners" data-page="partners">Find a Reseller</a></div>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="store-grid">
+          <div class="store-card"><span class="state state-buy">MOST POPULAR</span><h3>GstarCAD 2027 Standard</h3><p>For individual designers and small teams.</p><div class="row"><span class="price">From $399 <small>sample</small></span></div><a class="btn btn-primary" style="height:34px;font-size:12px" href="#store" data-page="store">Buy in Store</a></div>
+          <div class="store-card"><span class="state state-buy">PROFESSIONAL</span><h3>GstarCAD 2027 Pro</h3><p>Professional modules, collaboration and compatibility tools.</p><div class="row"><span class="price">From $699 <small>sample</small></span></div><a class="btn btn-primary" style="height:34px;font-size:12px" href="#store" data-page="store">Buy in Store</a></div>
+          <div class="store-card"><span class="state state-contact">ENTERPRISE</span><h3>GstarCAD Enterprise</h3><p>Volume licensing, deployment and support.</p><div class="row"><span class="price" style="font-size:13px">Custom quote</span></div><a class="btn btn-dark" style="height:34px;font-size:12px" href="#partners" data-page="partners">Contact Sales</a></div>
+        </div>
+        <div class="sec-head" style="margin-top:44px"><div><div class="section-label">COMPARE</div><h2>Perpetual vs subscription</h2></div></div>
+        <div class="table-wrap"><table class="data-table"><thead><tr><th>Option</th><th>Best for</th><th>Cost pattern</th><th>Ownership</th><th>Buy</th></tr></thead><tbody><tr><td class="strong">Perpetual</td><td>Long-term teams</td><td>One-time</td><td>Own it</td><td><a href="#store" data-page="store">Buy online</a></td></tr><tr><td class="strong">Subscription</td><td>Short projects</td><td>Monthly / annual</td><td>Rental</td><td><a href="#store" data-page="store">View options</a></td></tr><tr><td class="strong">Reseller</td><td>Restricted regions</td><td>Local quote</td><td>Depends</td><td><a href="#partners" data-page="partners">Find a Reseller</a></td></tr></tbody></table></div>
+        <p style="font-size:11px;color:var(--muted);margin-top:12px">Prices are sample values for prototype review. Final pricing, currency and tax rules must be confirmed before launch.</p>
+      </div>
+    </section>
+  </section>
+
+  <!-- ================= STORE ================= -->
+  <section class="page" id="page-store">
+    <div class="page-head">
+      <div class="container">
+        <div class="breadcrumb"><a href="#home" data-page="home">Home</a><span>/</span><span>Store</span></div>
+        <h1 class="page-title">Store</h1>
+        <p class="page-lead">All products are visible to everyone. The region determines how you can buy: online, through a local reseller, or by contacting us.</p>
+        <div class="page-actions"><span class="pill pill-blue">Filters: product line / use case</span><span class="pill pill-light">Multi-currency</span></div>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="store-grid">
+          <a class="store-card" href="#store" data-page="store"><span class="state state-buy">BUY ONLINE</span><h3>GstarCAD 2027 Pro</h3><span class="sku">SKU: GC-2027-PRO</span><p>Professional 2D CAD with full DWG support and professional modules.</p><div class="row"><span class="price">$699 <small>sample</small></span><span class="btn btn-primary" style="height:32px;font-size:12px;padding:0 12px">Buy</span></div></a>
+          <a class="store-card" href="#store" data-page="store"><span class="state state-buy">BUY ONLINE</span><h3>GstarCAD 2027 Standard</h3><span class="sku">SKU: GC-2027-STD</span><p>Standard 2D drafting, editing and plotting.</p><div class="row"><span class="price">$399 <small>sample</small></span><span class="btn btn-primary" style="height:32px;font-size:12px;padding:0 12px">Buy</span></div></a>
+          <a class="store-card" href="#partners" data-page="partners"><span class="state state-reseller">AVAILABLE FROM RESELLER</span><h3>GstarCAD Architecture</h3><span class="sku">SKU: GC-ARCH</span><p>Sold through local partners in your region.</p><div class="row"><span class="price" style="font-size:13px">Contact local partner</span><span class="btn btn-ghost" style="height:32px;font-size:12px;padding:0 12px">Find reseller</span></div></a>
+          <a class="store-card" href="#partners" data-page="partners"><span class="state state-reseller">AVAILABLE FROM RESELLER</span><h3>GstarCAD Mechanical</h3><span class="sku">SKU: GC-MECH</span><p>Sold through local partners in your region.</p><div class="row"><span class="price" style="font-size:13px">Contact local partner</span><span class="btn btn-ghost" style="height:32px;font-size:12px;padding:0 12px">Find reseller</span></div></a>
+          <a class="store-card" href="#store" data-page="store"><span class="state state-buy">BUY ONLINE</span><h3>GstarCAD 3D</h3><span class="sku">SKU: GC-3D</span><p>3D modelling, assemblies and drawing output.</p><div class="row"><span class="price">$899 <small>sample</small></span><span class="btn btn-primary" style="height:32px;font-size:12px;padding:0 12px">Buy</span></div></a>
+          <a class="store-card" href="#partners" data-page="partners"><span class="state state-contact">CONTACT US</span><h3>GstarBIM</h3><span class="sku">SKU: GC-BIM</span><p>BIM coordination and collaboration. Custom quote.</p><div class="row"><span class="price" style="font-size:13px">Custom quote</span><span class="btn btn-dark" style="height:32px;font-size:12px;padding:0 12px">Contact</span></div></a>
+        </div>
+        <div class="panel" style="margin-top:18px"><h3>Three-state routing</h3><p>State A: buy online. State B: available from a reseller, with a deep link to that reseller and product. State C: contact the manufacturer. The status is visible before the user clicks, so the redirect is expected rather than a surprise.</p></div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ================= PARTNERS ================= -->
+  <section class="page" id="page-partners">
+    <div class="page-head">
+      <div class="container">
+        <div class="breadcrumb"><a href="#home" data-page="home">Home</a><span>/</span><span>Partners</span></div>
+        <h1 class="page-title">Partners</h1>
+        <p class="page-lead">Resellers, Solution Apps and Developers are separate tracks. Each one answers a different question and must not be mixed into a single list.</p>
+        <div class="page-actions"><a class="btn btn-primary" href="#partners" data-page="partners">Find a Reseller</a><a class="btn btn-ghost" href="#partners" data-page="partners">Become a Partner</a></div>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="panel">
+          <div class="block-head"><h3>Find a Reseller</h3><span class="pill pill-blue">Directory</span></div>
+          <p>Select your country to find a local partner for quotes, invoices, implementation and support.</p>
+          <div class="form-grid" style="grid-template-columns:1fr 1fr 1fr;margin-top:14px"><div class="field"><label>Country</label><select><option>United States</option><option>Germany</option><option>Poland</option></select></div><div class="field"><label>Product</label><select><option>All products</option><option>GstarCAD Platform</option></select></div><div class="field"><label>Language</label><select><option>English</option><option>Deutsch</option></select></div></div>
+        </div>
+        <div class="reseller-grid" style="margin-top:16px">
+          <div class="reseller-card"><span class="flag">UNITED STATES</span><h3>Reseller name</h3><p>Authorised reseller · English · Implementation and support</p><a href="#">View details <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a></div>
+          <div class="reseller-card"><span class="flag">GERMANY</span><h3>Reseller name</h3><p>Authorised reseller · Deutsch · Local invoicing</p><a href="#">View details <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a></div>
+          <div class="reseller-card"><span class="flag">POLAND</span><h3>Reseller name</h3><p>Authorised reseller · Polski · Local support</p><a href="#">View details <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a></div>
+          <div class="reseller-card"><span class="flag">BRAZIL</span><h3>Reseller name</h3><p>Authorised reseller · Português · Local support</p><a href="#">View details <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a></div>
+          <div class="reseller-card"><span class="flag">JAPAN</span><h3>Reseller name</h3><p>Authorised reseller · 日本語 · Local support</p><a href="#">View details <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a></div>
+          <div class="reseller-card"><span class="flag">AUSTRALIA</span><h3>Reseller name</h3><p>Authorised reseller · English · Local support</p><a href="#">View details <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a></div>
+        </div>
+        <div class="split" style="margin-top:16px">
+          <a class="panel" href="#" style="display:block"><span class="pill pill-blue">SOLUTION APPS</span><h3 style="margin-top:12px">Industry applications built on GstarCAD</h3><p>Browse partner-built applications by industry and use case.</p><span class="btn btn-ghost" style="margin-top:12px">Browse Solution Apps</span></a>
+          <a class="panel" href="#" style="display:block"><span class="pill pill-amber">DEVELOPERS</span><h3 style="margin-top:12px">APIs, SDKs and documentation</h3><p>GRX, .NET, COM, LISP and Python resources for developers.</p><span class="btn btn-ghost" style="margin-top:12px">Open Developer Center</span></a>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ================= MOBILE ================= -->
+  <section class="page" id="page-mobile">
+    <div class="page-head">
+      <div class="container">
+        <div class="breadcrumb"><a href="#home" data-page="home">Home</a><span>/</span><span>Mobile</span></div>
+        <h1 class="page-title">Mobile navigation &amp; home</h1>
+        <p class="page-lead">Independent DOM, not a copy of the desktop menu. Store and Free Trial are fixed in the bottom bar; the language switcher is easy to reach.</p>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="phone-stage">
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="phone-bar"><span>GSTARSOFT</span><span style="color:var(--brand-dark)">EN ▾</span></div>
+              <div class="phone-hero"><h3>GstarCAD 2027<br>Own it once. Own it forever.</h3><p>Full DWG support. No recurring subscription.</p><span class="btn btn-primary">Free Trial</span></div>
+              <div class="phone-section"><h4>AI applications</h4><div class="phone-list"><div>GstarRender · AI rendering</div><div>AI Assistant · Natural language</div><div>Image to CAD · Scan to DWG</div></div></div>
+              <div class="phone-section"><h4>Industries</h4><div class="phone-list"><div>AEC</div><div>Manufacturing</div></div></div>
+              <div class="phone-section" style="padding-bottom:70px"><h4>CAD / BIM products</h4><div class="phone-list"><div>GstarCAD Platform</div><div>GstarCAD Architecture</div><div>GstarCAD Mechanical</div></div></div>
+              <div class="phone-bottom"><a href="#store" data-page="store">Buy Online</a><a class="primary" href="#download" data-page="download">Free Trial</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="panel" style="max-width:760px;margin:24px auto 0"><h3>Mobile structure notes</h3><ul class="check-list"><li><svg class="icon icon-sm"><use href="#i-check"/></svg>Use-case entry comes first in the secondary menu</li><li><svg class="icon icon-sm"><use href="#i-check"/></svg>AI stays on top but occupies one row only</li><li><svg class="icon icon-sm"><use href="#i-check"/></svg>Store and Free Trial are fixed in the bottom bar</li><li><svg class="icon icon-sm"><use href="#i-check"/></svg>Language switcher is in the primary mobile menu</li><li><svg class="icon icon-sm"><use href="#i-check"/></svg>Independent DOM reduces LCP and duplicate rendering</li></ul></div>
+      </div>
+    </section>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand"><a class="logo" href="#home" data-page="home"><span class="logo-mark">G</span><span class="logo-text"><strong>GstarCAD</strong><span>GSTARSOFT</span></span></a><p>Professional CAD software with full DWG support and perpetual licensing options.</p><div class="footer-contact"><span><svg class="icon icon-sm"><use href="#i-globe"/></svg>Global presence · 90+ countries</span><a href="#partners" data-page="partners"><svg class="icon icon-sm"><use href="#i-pin"/></svg>Find a Reseller</a></div></div>
+      <div class="footer-col"><h4>Products</h4><ul><li><a href="#product" data-page="product">GstarCAD Platform</a></li><li><a href="#product" data-page="product">GstarCAD Architecture</a></li><li><a href="#product" data-page="product">GstarCAD Mechanical</a></li><li><a href="#pricing" data-page="pricing">Pricing</a></li></ul></div>
+      <div class="footer-col"><h4>Industries</h4><ul><li><a href="#industry" data-page="industry">AEC</a></li><li><a href="#industry" data-page="industry">Manufacturing</a></li><li><a href="#industry" data-page="industry">Customer stories</a></li></ul></div>
+      <div class="footer-col"><h4>Partners</h4><ul><li><a href="#partners" data-page="partners">Find a Reseller</a></li><li><a href="#partners" data-page="partners">Solution Apps</a></li><li><a href="#partners" data-page="partners">Developers</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="#home" data-page="home">About</a></li><li><a href="#home" data-page="home">Global presence</a></li><li><a href="#home" data-page="home">Contact</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Gstarsoft. All rights reserved.</span><nav><a href="#">Privacy</a><a href="#">Cookie settings</a><a href="#">Sitemap</a></nav></div>
+  </div>
+</footer>
+
+<script src="assets/prototype.js"></script>
+</body>
+</html>

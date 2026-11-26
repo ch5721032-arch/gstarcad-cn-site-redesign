@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>浩辰官网改版原型 · 国内册</title>
+<meta name="description" content="依据浩辰官网改版线框图国内册制作的多页高保真原型。">
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" href="assets/prototype.css">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 1.7 4.6L18 9.3l-4.3 1.7L12 15.6l-1.7-4.6L6 9.3l4.3-1.7L12 3z"/><path d="M19 14l.7 1.9L21.6 17l-1.9.7L19 19.6l-.7-1.9L16.4 17l1.9-.7L19 14z"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 9h1M14 9h1M9 13h1M14 13h1M9 17h1M14 17h1"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></symbol>
+  <symbol id="i-factory" viewBox="0 0 24 24"><path d="M2 21h20M4 21V9l6 4V9l6 4V9l4 3v9"/><path d="M8 17h.01M12 17h.01M16 17h.01"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6z"/><path d="M9 3v15M15 6v15"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-graduation" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m20 6-11 11-5-5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.9 2z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></symbol>
+</svg>
+
+<div class="proto-bar">
+  <div class="proto-inner">
+    <span class="proto-label">原型 · 国内册</span>
+    <nav class="proto-tabs" aria-label="原型页面切换">
+      <button data-target="home" class="on">首页</button>
+      <button data-target="product">产品与下载</button>
+      <button data-target="download">下载中心</button>
+      <button data-target="detail">产品详情</button>
+      <button data-target="industry">行业与案例</button>
+      <button data-target="solution">行业方案</button>
+      <button data-target="partners">生态与合作</button>
+      <button data-target="mobile">移动端</button>
+    </nav>
+    <a class="proto-switch" href="en.html">English ↗</a>
+  </div>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-inner">
+    <a class="logo" href="#home" data-page="home" aria-label="浩辰软件首页">
+      <span class="logo-mark">G</span>
+      <span class="logo-text"><strong>浩辰软件</strong><span>GSTARSOFT</span></span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="主导航">
+      <div class="nav-item has-mega">
+        <button class="nav-link" aria-expanded="false">产品与下载 <svg class="icon"><use href="#i-chevron"/></svg></button>
+        <div class="mega">
+          <div class="mega-in">
+            <div class="mega-grid">
+              <div>
+                <div class="mega-col-title">按场景选择</div>
+                <div class="mega-list">
+                  <a href="#industry" data-page="industry">建筑设计 <span>方案</span></a>
+                  <a href="#industry" data-page="industry">机电暖通 <span>方案</span></a>
+                  <a href="#industry" data-page="industry">电力电气 <span>方案</span></a>
+                  <a href="#industry" data-page="industry">机械制造 <span>方案</span></a>
+                  <a href="#industry" data-page="industry">基础设施 <span>轻量</span></a>
+                  <a href="#industry" data-page="industry">测绘地信 <span>轻量</span></a>
+                </div>
+              </div>
+              <div>
+                <div class="mega-ai">
+                  <div class="mega-ai-head"><strong>AI 应用矩阵</strong><span class="tag-new">NEW</span></div>
+                  <div class="ai-grid">
+                    <a class="ai-mini" href="#product" data-page="product"><b>浩辰AI设计智能体</b><span>从需求到方案</span></a>
+                    <a class="ai-mini" href="#product" data-page="product"><b>浩辰AI助手</b><span>自然语言驱动</span></a>
+                    <a class="ai-mini" href="#product" data-page="product"><b>浩辰AI渲染</b><span>效果图生成</span></a>
+                    <a class="ai-mini" href="#product" data-page="product"><b>AI图片转CAD</b><span>扫描图转DWG</span></a>
+                  </div>
+                </div>
+                <div class="mega-col-title">CAD / BIM 产品矩阵</div>
+                <div class="mega-cad">
+                  <a href="#product" data-page="product"><i></i>浩辰CAD 平台软件</a>
+                  <a href="#product" data-page="product"><i></i>浩辰CAD 建筑</a>
+                  <a href="#product" data-page="product"><i></i>浩辰CAD 机械</a>
+                  <a href="#product" data-page="product"><i></i>GstarBIM</a>
+                  <a href="#product" data-page="product"><i></i>浩辰3D</a>
+                  <a href="#product" data-page="product"><i></i>浩辰CAD 看图王</a>
+                </div>
+              </div>
+              <div class="mega-focus">
+                <span class="tag-new">主推</span>
+                <h3>浩辰CAD 2027 专业版</h3>
+                <p>平台 + 专业软件一体化，全新「芯」速度引擎，交互与云协同全面升级。</p>
+                <a href="#detail" data-page="detail">查看详情 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+              </div>
+            </div>
+            <div class="mega-foot">
+              <a class="hot" href="#download" data-page="download"><svg class="icon icon-sm"><use href="#i-download"/></svg>下载中心</a>
+              <a href="#product" data-page="product">产品总览</a>
+              <a href="#product" data-page="product">选型助手</a>
+              <a href="#detail" data-page="detail">适配矩阵</a>
+              <a href="#product" data-page="product">全部产品 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item has-mega">
+        <button class="nav-link" aria-expanded="false">行业与客户案例 <svg class="icon"><use href="#i-chevron"/></svg></button>
+        <div class="mega">
+          <div class="mega-in">
+            <div class="mega-grid" style="grid-template-columns:1fr 1fr 1fr">
+              <div>
+                <div class="mega-col-title">完整行业方案</div>
+                <div class="mega-list">
+                  <a href="#industry" data-page="industry">建筑设计 <span>8 屏完整方案</span></a>
+                  <a href="#industry" data-page="industry">机电暖通 <span>8 屏完整方案</span></a>
+                  <a href="#industry" data-page="industry">电力电气 <span>8 屏完整方案</span></a>
+                  <a href="#industry" data-page="industry">机械制造 <span>8 屏完整方案</span></a>
+                </div>
+              </div>
+              <div>
+                <div class="mega-col-title">轻量行业方案</div>
+                <div class="mega-list">
+                  <a href="#industry" data-page="industry">基础设施 <span>痛点 + 产品组合</span></a>
+                  <a href="#industry" data-page="industry">测绘地信 <span>痛点 + 产品组合</span></a>
+                  <a href="#industry" data-page="industry">信创国产化 <span>痛点 + 产品组合</span></a>
+                  <a href="#industry" data-page="industry">图学教育 <span>痛点 + 产品组合</span></a>
+                </div>
+              </div>
+              <div>
+                <div class="mega-col-title">客户案例库</div>
+                <div class="mega-list">
+                  <a href="#industry" data-page="industry">全部案例 <span>按行业筛选</span></a>
+                  <a href="#industry" data-page="industry">按企业规模 <span>筛选</span></a>
+                  <a href="#industry" data-page="industry">按地区 <span>筛选</span></a>
+                  <a href="#solution" data-page="solution">建筑设计样板 <span>完整方案</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item has-mega">
+        <button class="nav-link" aria-expanded="false">生态与合作 <svg class="icon"><use href="#i-chevron"/></svg></button>
+        <div class="mega">
+          <div class="mega-in">
+            <div class="mega-grid" style="grid-template-columns:1fr 1fr 1fr">
+              <div>
+                <div class="mega-col-title">二次开发伙伴</div>
+                <div class="mega-list">
+                  <a href="#partners" data-page="partners">应用市场 <span>按行业筛选</span></a>
+                  <a href="#partners" data-page="partners">成为二开伙伴 <span>申请通道</span></a>
+                  <a href="#partners" data-page="partners">开发者中心 <span>GRX / .NET / COM</span></a>
+                </div>
+              </div>
+              <div>
+                <div class="mega-col-title">授权经销商</div>
+                <div class="mega-list">
+                  <a href="#partners" data-page="partners">查找本地经销商 <span>按地区</span></a>
+                  <a href="#partners" data-page="partners">成为经销商 <span>申请通道</span></a>
+                  <a href="#partners" data-page="partners">渠道合作咨询 <span>联系渠道团队</span></a>
+                </div>
+              </div>
+              <div>
+                <div class="mega-col-title">合作原则</div>
+                <div class="mega-list">
+                  <a href="#partners" data-page="partners">二开伙伴 <span>展示应用</span></a>
+                  <a href="#partners" data-page="partners">经销商 <span>展示本地服务</span></a>
+                  <a href="#partners" data-page="partners">两类角色分开 <span>不混排</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item has-mega">
+        <button class="nav-link" aria-expanded="false">服务与支持 <svg class="icon"><use href="#i-chevron"/></svg></button>
+        <div class="mega">
+          <div class="mega-in">
+            <div class="mega-grid" style="grid-template-columns:1fr 1fr 1fr">
+              <div><div class="mega-col-title">上手与安装</div><div class="mega-list"><a href="#download" data-page="download">安装与注册</a><a href="#download" data-page="download">下载中心</a><a href="#detail" data-page="detail">授权与激活</a></div></div>
+              <div><div class="mega-col-title">学习与帮助</div><div class="mega-list"><a href="#detail" data-page="detail">帮助文档</a><a href="#detail" data-page="detail">视频教程</a><a href="#detail" data-page="detail">学习中心</a></div></div>
+              <div><div class="mega-col-title">交流与支持</div><div class="mega-list"><a href="#detail" data-page="detail">问答社区</a><a href="#detail" data-page="detail">经验技巧</a><a href="#home" data-page="home" data-scroll="contact">联系技术支持</a></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item has-mega">
+        <button class="nav-link" aria-expanded="false">关于 <svg class="icon"><use href="#i-chevron"/></svg></button>
+        <div class="mega">
+          <div class="mega-in">
+            <div class="mega-grid" style="grid-template-columns:1fr 1fr 1fr">
+              <div><div class="mega-col-title">了解浩辰</div><div class="mega-list"><a href="#home" data-page="home">公司介绍</a><a href="#home" data-page="home">发展历程</a><a href="#home" data-page="home">荣誉资质</a></div></div>
+              <div><div class="mega-col-title">动态与联系</div><div class="mega-list"><a href="#home" data-page="home">新闻动态</a><a href="#home" data-page="home">加入我们</a><a href="#home" data-page="home" data-scroll="contact">联系我们</a></div></div>
+              <div><div class="mega-col-title">合规与信息</div><div class="mega-list"><a href="#home" data-page="home">隐私政策</a><a href="#home" data-page="home">网站地图</a><a href="#home" data-page="home">投资者关系</a></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" aria-label="搜索"><svg class="icon"><use href="#i-search"/></svg></button>
+      <a class="btn btn-ghost" href="#home" data-page="home" data-scroll="trial">免费试用</a>
+      <a class="btn btn-primary" href="#home" data-page="home" data-scroll="contact">获取报价</a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="打开菜单" aria-expanded="false" aria-controls="mainNav"><svg class="icon"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ================= HOME ================= -->
+  <section class="page active" id="page-home">
+    <div class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow" style="color:#AFC8FF">自主内核 · DWG 兼容 · 国产工业软件</div>
+          <h1>浩辰CAD 2027<span>自主可控的智能设计平台</span></h1>
+          <p class="hero-lead">平台 + 专业软件，覆盖建筑、机电、电力、机械的设计全流程。DWG 完全兼容，老图纸、老快捷键、老插件继续可用。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#home" data-page="home" data-scroll="trial">免费试用 30 天 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-glass" href="#home" data-page="home" data-scroll="contact">获取方案与报价</a>
+          </div>
+          <div class="hero-stats">
+            <div><b>20+</b><span>年行业深耕</span></div>
+            <div><b>100 万+</b><span>全球用户</span></div>
+            <div><b>90+</b><span>国家与地区</span></div>
+            <div><b>688657</b><span>科创板上市</span></div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="cad-window">
+            <div class="cad-bar"><span class="cad-dots"><i></i><i></i><i></i></span><span class="cad-file">project-plan.dwg</span></div>
+            <div class="cad-body">
+              <div class="cad-tools"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="cad-canvas">
+                <div class="grid"></div>
+                <svg viewBox="0 0 520 360" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <g stroke="rgba(150,185,235,.75)" stroke-width="1.4">
+                    <path d="M60 60h150v110H60z"/><path d="M210 60h120v70H210z"/><path d="M330 60h120v110H330z"/>
+                    <path d="M60 170h170v120H60z"/><path d="M230 130h100v160H230z"/><path d="M330 170h120v120H330z"/>
+                    <path d="M120 60v-18M120 170h-24M390 60v-18M390 290h24"/>
+                    <circle cx="285" cy="210" r="26"/><path d="M259 210h-18M311 210h18M285 184v-18M285 236v18"/>
+                    <path d="M80 210h34M126 210h34M80 210v34M126 210v34"/>
+                  </g>
+                  <g fill="rgba(175,200,255,.9)" font-family="monospace" font-size="10"><text x="98" y="52">7200</text><text x="350" y="52">3600</text><text x="30" y="136">4200</text><text x="252" y="258">R26</text></g>
+                  <g stroke="rgba(30,94,232,.95)" stroke-width="1.6"><path d="M60 60h150v110H60z"/><path d="M230 130h100v160H230z"/></g>
+                  <g fill="#AFC8FF"><rect x="55" y="55" width="7" height="7"/><rect x="205" y="55" width="7" height="7"/><rect x="55" y="165" width="7" height="7"/><rect x="205" y="165" width="7" height="7"/><rect x="225" y="125" width="7" height="7"/><rect x="325" y="125" width="7" height="7"/><rect x="225" y="285" width="7" height="7"/><rect x="325" y="285" width="7" height="7"/></g>
+                </svg>
+              </div>
+              <div class="cad-props"><b>PROPERTIES</b><span>图层 <i>WALL</i></span><span>线型 <i>CONTINUOUS</i></span><span>颜色 <i>BYLAYER</i></span><span>线宽 <i>0.25</i></span><span>单位 <i>mm</i></span></div>
+            </div>
+            <div class="cad-command"><b>命令:</b> _LINE 指定第一点</div>
+          </div>
+          <div class="float-chip one"><svg class="icon"><use href="#i-shield"/></svg><span>DWG 完全兼容<small>老图纸直接打开</small></span></div>
+          <div class="float-chip two"><svg class="icon"><use href="#i-layers"/></svg><span>老插件继续可用<small>平滑迁移</small></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- module 2: who uses us -->
+    <section class="section tight">
+      <div class="container">
+        <div class="logo-strip">
+          <span class="label">他们正在使用浩辰</span>
+          <ul><li>大中电机</li><li>同泰新能源</li><li>万达客车</li><li>合立道设计集团</li><li>川维石化</li><li>海口市设计集团</li></ul>
+        </div>
+        <div class="case-grid" style="margin-top:18px">
+          <a class="case-card" href="#industry" data-page="industry"><span class="case-client">大中电机</span><div class="case-metric">约 15%<small>设计效率提升</small></div><p>多版本历史图纸直接打开，新产品导入周期明显缩短。</p><span>阅读案例 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+          <a class="case-card" href="#industry" data-page="industry"><span class="case-client">同泰新能源</span><div class="case-metric">按期<small>项目交付</small></div><p>本地服务团队快速响应，问题解决效率高，保障项目按期交付。</p><span>阅读案例 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+          <a class="case-card" href="#industry" data-page="industry"><span class="case-client">万达客车</span><div class="case-metric">无痛<small>历史数据迁移</small></div><p>多品类、多版本、多格式历史设计数据兼容适配。</p><span>阅读案例 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- module 3: industry -->
+    <section class="section soft">
+      <div class="container">
+        <div class="sec-head">
+          <div><div class="section-label">INDUSTRY</div><h2>你所在的行业，怎么用浩辰</h2><p>先认领行业身份，再看该行业的方案、产品组合与同类案例。8 个行业入口，4 个完整方案 + 4 个轻量方案。</p></div>
+          <a class="side-link" href="#industry" data-page="industry">查看全部行业 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="industry-grid">
+          <a class="industry-card" href="#solution" data-page="solution"><span class="industry-icon"><svg class="icon"><use href="#i-building"/></svg></span><h3>建筑设计</h3><p>方案协同、图纸交付与多专业配合。</p><div class="industry-meta"><span class="pill pill-deep">深度方案</span><span class="go">查看 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></div></a>
+          <a class="industry-card" href="#solution" data-page="solution"><span class="industry-icon"><svg class="icon"><use href="#i-layers"/></svg></span><h3>机电暖通</h3><p>管线综合与碰撞检查，提前排布。</p><div class="industry-meta"><span class="pill pill-deep">深度方案</span><span class="go">查看 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></div></a>
+          <a class="industry-card" href="#solution" data-page="solution"><span class="industry-icon"><svg class="icon"><use href="#i-zap"/></svg></span><h3>电力电气</h3><p>电气图、设备表与接线关系联动。</p><div class="industry-meta"><span class="pill pill-deep">深度方案</span><span class="go">查看 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></div></a>
+          <a class="industry-card" href="#solution" data-page="solution"><span class="industry-icon"><svg class="icon"><use href="#i-factory"/></svg></span><h3>机械制造</h3><p>历史图纸兼容与工艺协同。</p><div class="industry-meta"><span class="pill pill-deep">深度方案</span><span class="go">查看 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></div></a>
+          <a class="industry-card" href="#industry" data-page="industry"><span class="industry-icon"><svg class="icon"><use href="#i-map"/></svg></span><h3>基础设施</h3><p>大体量图纸与多标段协同。</p><div class="industry-meta"><span class="pill pill-light">轻量方案</span><span class="go">查看 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></div></a>
+          <a class="industry-card" href="#industry" data-page="industry"><span class="industry-icon"><svg class="icon"><use href="#i-pin"/></svg></span><h3>测绘地信</h3><p>地形图、坐标系统与既有数据适配。</p><div class="industry-meta"><span class="pill pill-light">轻量方案</span><span class="go">查看 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></div></a>
+          <a class="industry-card" href="#industry" data-page="industry"><span class="industry-icon"><svg class="icon"><use href="#i-shield"/></svg></span><h3>信创国产化</h3><p>国产软硬件环境适配与数据安全。</p><div class="industry-meta"><span class="pill pill-light">轻量方案</span><span class="go">查看 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></div></a>
+          <a class="industry-card" href="#industry" data-page="industry"><span class="industry-icon"><svg class="icon"><use href="#i-graduation"/></svg></span><h3>图学教育</h3><p>教学授权与实训环境。</p><div class="industry-meta"><span class="pill pill-light">轻量方案</span><span class="go">查看 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></div></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- module 4: products -->
+    <section class="section">
+      <div class="container">
+        <div class="sec-head">
+          <div><div class="section-label">PRODUCTS</div><h2>有哪些产品</h2><p>产品顺序与导航一致：AI 应用矩阵在前，CAD/BIM 产品矩阵在后。AI 只占一条窄带，不挤压主转化路径。</p></div>
+          <a class="side-link" href="#product" data-page="product">进入产品总览 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="product-block">
+          <div class="block-head"><h3>AI 应用矩阵 <span class="tag-new">NEW</span><span class="sub">四个产品，一条窄带</span></h3><a class="side-link" href="#product" data-page="product">了解 AI 方案 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a></div>
+          <div class="ai-grid-4">
+            <a class="ai-card" href="#product" data-page="product"><div class="ai-card-top"><svg class="icon"><use href="#i-spark"/></svg><span class="tag-new">NEW</span></div><h4>浩辰AI设计智能体</h4><p>从需求描述到方案生成，辅助设计前期构思。</p><span>了解详情 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="ai-card" href="#product" data-page="product"><div class="ai-card-top"><svg class="icon"><use href="#i-spark"/></svg><span class="tag-new">NEW</span></div><h4>浩辰AI助手</h4><p>自然语言驱动绘图与命令，降低上手门槛。</p><span>了解详情 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="ai-card" href="#product" data-page="product"><div class="ai-card-top"><svg class="icon"><use href="#i-spark"/></svg><span class="tag-new">NEW</span></div><h4>浩辰AI渲染</h4><p>快速生成效果图，辅助方案汇报。</p><span>了解详情 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="ai-card" href="#product" data-page="product"><div class="ai-card-top"><svg class="icon"><use href="#i-spark"/></svg><span class="tag-new">NEW</span></div><h4>AI图片转CAD</h4><p>扫描图、照片转为可编辑 DWG。</p><span>了解详情 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+          </div>
+        </div>
+        <div class="product-block">
+          <div class="block-head"><h3>CAD / BIM 产品矩阵 <span class="sub">平台软件 + 行业专业软件</span></h3><a class="side-link" href="#product" data-page="product">查看全部产品 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a></div>
+          <div class="product-grid">
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">2D CAD PLATFORM</span><h4>浩辰CAD 平台软件</h4><p>自主可控的 2D CAD 平台，DWG 完全兼容。</p><span>了解详情 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">ARCHITECTURE</span><h4>浩辰CAD 建筑</h4><p>面向建筑设计的专业软件。</p><span>了解详情 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">MECHANICAL</span><h4>浩辰CAD 机械</h4><p>零件、装配、标注与明细表。</p><span>了解详情 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">BIM SOLUTION</span><h4>GstarBIM</h4><p>建筑信息模型与多专业协同。</p><span>了解详情 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">3D CAD</span><h4>浩辰3D</h4><p>零件建模、装配与工程图输出。</p><span>了解详情 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">VIEWER</span><h4>浩辰CAD 看图王</h4><p>多端看图、批注与分享。</p><span>了解详情 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- module 5: technology -->
+    <section class="section soft">
+      <div class="container">
+        <div class="sec-head">
+          <div><div class="section-label">TECHNOLOGY</div><h2>技术靠谱吗</h2><p>兼容型 CAD 的第一决策门槛，是能不能无损打开现有图纸。把兼容性、自主内核和信创适配放在一起讲。</p></div>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card"><svg class="icon"><use href="#i-cpu"/></svg><h3>自主内核</h3><p>自主可控的 CAD 内核，持续投入研发，保障长期可用与安全合规。</p></div>
+          <div class="feature-card"><svg class="icon"><use href="#i-file"/></svg><h3>DWG 完全兼容</h3><p>老图纸、老快捷键、老插件继续可用，降低替换风险和学习成本。</p></div>
+          <div class="feature-card"><svg class="icon"><use href="#i-shield"/></svg><h3>信创全栈适配</h3><p>国产操作系统、芯片与软硬件环境适配，满足政企与设计院要求。</p></div>
+        </div>
+        <div class="panel" style="margin-top:16px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+          <div><h3 style="font-size:18px">图纸兼容性预检</h3><p>上传一张现有 DWG，先看兼容结果，再决定是否试用。愿意上传图纸的客户，通常已经在真实评估替换。</p></div>
+          <a class="btn btn-primary" href="#home" data-page="home" data-scroll="contact">上传图纸预检 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- module 6: conversion -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="sec-head"><div><div class="section-label">NEXT STEP</div><h2>怎么开始</h2><p>国内不公开价格。需要方案与报价，行业顾问按席位与场景提供定制方案；想先体验，直接免费试用 30 天。</p></div></div>
+        <div class="split">
+          <div class="panel">
+            <h3>获取方案与报价</h3>
+            <p>填写需求后，行业顾问将在 1 个工作日内联系。国内不提供在线选购，所有报价按席位与行业方案定制。</p>
+            <form id="leadForm" novalidate>
+              <div class="form-grid">
+                <div class="field"><label for="name">姓名</label><input id="name" required placeholder="请输入姓名"></div>
+                <div class="field"><label for="company">公司</label><input id="company" required placeholder="请输入公司名称"></div>
+                <div class="field"><label for="phone">手机</label><input id="phone" type="tel" required placeholder="请输入手机号"></div>
+                <div class="field"><label for="seats">席位规模</label><select id="seats"><option>1–9 人</option><option>10–50 人</option><option>50 人以上</option></select></div>
+                <div class="field full"><label for="need">需求描述</label><textarea id="need" placeholder="例如：建筑设计，需要 20 个席位，关注历史图纸兼容"></textarea></div>
+              </div>
+              <div class="form-foot"><small>提交即表示同意我们与你联系。</small><button class="btn btn-primary" type="submit">提交需求 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></button></div>
+              <div class="form-success" id="formSuccess">已收到你的需求，行业顾问将在 1 个工作日内联系你。</div>
+            </form>
+          </div>
+          <div class="panel dark" id="trial">
+            <span class="tag-new" style="background:rgba(255,255,255,.1);color:#FFD9A3">FREE TRIAL</span>
+            <h3 style="margin-top:12px">免费试用 30 天</h3>
+            <p>先在自己的项目里跑一遍，再决定是否采购。试用不需要绑定支付方式。</p>
+            <ul class="check-list">
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>全功能试用，覆盖 2D 绘图与专业模块</li>
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>无需绑定支付方式</li>
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>专属顾问协助安装与上手</li>
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>试用期结束前不会自动扣费</li>
+            </ul>
+            <a class="btn btn-primary" style="margin-top:18px;width:100%" href="#download" data-page="download">立即免费试用 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ================= PRODUCT ================= -->
+  <section class="page" id="page-product">
+    <div class="page-head">
+      <div class="container">
+        <div class="breadcrumb"><a href="#home" data-page="home">首页</a><span>/</span><span>产品与下载</span></div>
+        <h1 class="page-title">产品与下载</h1>
+        <p class="page-lead">按官方产品架构图重组。AI 应用矩阵置顶，CAD/BIM 产品矩阵紧随其后；操作系统版本从产品维度剥离为适配矩阵。</p>
+        <div class="page-actions"><a class="btn btn-primary" href="#download" data-page="download">进入下载中心 <svg class="icon icon-sm"><use href="#i-download"/></svg></a><a class="btn btn-ghost" href="#home" data-page="home" data-scroll="contact">获取报价</a></div>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="product-block">
+          <div class="block-head"><h3>AI 应用矩阵 <span class="tag-new">NEW</span><span class="sub">置顶，但不展开成一屏</span></h3></div>
+          <div class="ai-grid-4">
+            <a class="ai-card" href="#detail" data-page="detail"><div class="ai-card-top"><svg class="icon"><use href="#i-spark"/></svg><span class="tag-new">NEW</span></div><h4>浩辰AI设计智能体</h4><p>从需求描述到方案生成，辅助设计前期构思。</p><span>了解详情 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="ai-card" href="#detail" data-page="detail"><div class="ai-card-top"><svg class="icon"><use href="#i-spark"/></svg><span class="tag-new">NEW</span></div><h4>浩辰AI助手</h4><p>自然语言驱动绘图与命令，降低上手门槛。</p><span>了解详情 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="ai-card" href="#detail" data-page="detail"><div class="ai-card-top"><svg class="icon"><use href="#i-spark"/></svg><span class="tag-new">NEW</span></div><h4>浩辰AI渲染</h4><p>快速生成效果图，辅助方案汇报。</p><span>了解详情 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="ai-card" href="#detail" data-page="detail"><div class="ai-card-top"><svg class="icon"><use href="#i-spark"/></svg><span class="tag-new">NEW</span></div><h4>AI图片转CAD</h4><p>扫描图、照片转为可编辑 DWG。</p><span>了解详情 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+          </div>
+        </div>
+        <div class="product-block">
+          <div class="block-head"><h3>CAD / BIM 产品矩阵 <span class="sub">主力产品，不把 50+ 链接塞进菜单</span></h3></div>
+          <div class="product-grid">
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">2D CAD PLATFORM</span><h4>浩辰CAD 平台软件</h4><p>自主可控的 2D CAD 平台，DWG 完全兼容。</p><span>了解详情 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">ARCHITECTURE</span><h4>浩辰CAD 建筑</h4><p>面向建筑设计的专业软件。</p><span>了解详情 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">MECHANICAL</span><h4>浩辰CAD 机械</h4><p>零件、装配、标注与明细表。</p><span>了解详情 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">BIM SOLUTION</span><h4>GstarBIM</h4><p>建筑信息模型与多专业协同。</p><span>了解详情 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">3D CAD</span><h4>浩辰3D</h4><p>零件建模、装配与工程图输出。</p><span>了解详情 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+            <a class="product-card" href="#detail" data-page="detail"><span class="en">VIEWER</span><h4>浩辰CAD 看图王</h4><p>多端看图、批注与分享。</p><span>了解详情 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+          </div>
+        </div>
+        <div class="product-block">
+          <div class="block-head"><h3>适配矩阵 <span class="sub">操作系统版本不再占产品列表</span></h3></div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead><tr><th>操作系统</th><th>产品</th><th>说明</th><th>下载</th></tr></thead>
+              <tbody>
+                <tr><td class="strong">Windows</td><td>浩辰CAD 2027 / 2026 / 2025</td><td>主力版本，含专业模块</td><td><a href="#download" data-page="download">下载</a></td></tr>
+                <tr><td class="strong">Linux</td><td>浩辰CAD Linux</td><td>国产操作系统与信创环境</td><td><a href="#download" data-page="download">下载</a></td></tr>
+                <tr><td class="strong">macOS</td><td>浩辰CAD Mac</td><td>设计团队与个人用户</td><td><a href="#download" data-page="download">下载</a></td></tr>
+                <tr><td class="strong">鸿蒙</td><td>浩辰CAD Harmony</td><td>多端协同与移动查看</td><td><a href="#download" data-page="download">下载</a></td></tr>
+                <tr><td class="strong">机械 Linux</td><td>浩辰CAD 机械 Linux</td><td>制造业信创场景</td><td><a href="#download" data-page="download">下载</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel" style="margin-top:16px">
+          <h3>选型助手</h3>
+          <p>不知道选哪个产品？按「行业 → 团队规模 → 主要任务」三步给出推荐组合。</p>
+          <div class="steps">
+            <div class="step"><b>1</b><h4>选择行业</h4><p>建筑、机电、电力、机械、基础设施。</p></div>
+            <div class="step"><b>2</b><h4>选择规模</h4><p>1–9 人、10–50 人、50 人以上。</p></div>
+            <div class="step"><b>3</b><h4>选择任务</h4><p>绘图、看图、协同、二次开发。</p></div>
+            <div class="step"><b>4</b><h4>获取组合</h4><p>推荐产品 + 授权方式 + 报价入口。</p></div>
+          </div>
+        </div>
+        <div class="download-strip"><div><h3>下载中心：一个入口，找到所有版本</h3><p>Windows、Linux、macOS、鸿蒙与专业模块，统一在这里下载。</p></div><div class="actions"><a class="btn btn-primary" href="#download" data-page="download">进入下载中心 <svg class="icon icon-sm"><use href="#i-download"/></svg></a><a class="btn btn-white" href="#home" data-page="home" data-scroll="contact">获取报价</a></div></div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ================= DOWNLOAD ================= -->
+  <section class="page" id="page-download">
+    <div class="page-head">
+      <div class="container">
+        <div class="breadcrumb"><a href="#home" data-page="home">首页</a><span>/</span><span>下载中心</span></div>
+        <h1 class="page-title">下载中心</h1>
+        <p class="page-lead">国内用户可保留单字段轻量留资，但把摩擦降到最低。历史版本入口对设计院是刚需，老项目要用老版本打开。</p>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="split">
+          <div class="panel">
+            <h3>选择你的系统</h3>
+            <p>系统会自动识别当前设备，也可以手动切换。</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+              <span class="pill pill-blue">Windows · 已识别</span><span class="pill pill-light">Linux</span><span class="pill pill-light">macOS</span><span class="pill pill-light">鸿蒙</span><span class="pill pill-light">机械 Linux</span>
+            </div>
+            <div class="form-grid" style="margin-top:16px">
+              <div class="field full"><label>选择版本</label><select><option>浩辰CAD 2027 专业版</option><option>浩辰CAD 2027 标准版</option><option>浩辰CAD 2026</option></select></div>
+              <div class="field full"><label>手机号（选填，接收安装指引）</label><input placeholder="选填，不阻断下载"></div>
+            </div>
+            <div class="form-foot"><small>国内可保留轻量留资；海外版此页为零门槛。</small><button class="btn btn-primary" type="button">立即下载 <svg class="icon icon-sm"><use href="#i-download"/></svg></button></div>
+          </div>
+          <div class="panel soft">
+            <h3>下载完成页</h3>
+            <p>用户已经决定试用，意图最强。这里放教程、兼容性预检和顾问入口，降低弃用率。</p>
+            <ul class="check-list">
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>安装教程与常见问题</li>
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>图纸兼容性预检</li>
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>加入学习中心</li>
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>需要方案？行业顾问 1 个工作日内联系</li>
+            </ul>
+            <a class="btn btn-ghost" style="margin-top:16px" href="#home" data-page="home" data-scroll="contact">联系行业顾问</a>
+          </div>
+        </div>
+        <div class="sec-head" style="margin-top:46px"><div><div class="section-label">HISTORY</div><h2>历史版本</h2><p>老项目要用老版本打开，找不到就会转向第三方下载站，导致品牌词被截流。</p></div></div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>版本</th><th>发布日期</th><th>适用场景</th><th>下载</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">浩辰CAD 2027</td><td>2026</td><td>新项目、主流设计</td><td><a href="#">下载</a></td></tr>
+              <tr><td class="strong">浩辰CAD 2026</td><td>2025</td><td>老项目兼容、过渡</td><td><a href="#">下载</a></td></tr>
+              <tr><td class="strong">浩辰CAD 2025</td><td>2024</td><td>历史项目打开</td><td><a href="#">下载</a></td></tr>
+              <tr><td class="strong">浩辰CAD 2024</td><td>2023</td><td>长期维护项目</td><td><a href="#">下载</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ================= DETAIL ================= -->
+  <section class="page" id="page-detail">
+    <div class="page-head">
+      <div class="container">
+        <div class="breadcrumb"><a href="#home" data-page="home">首页</a><span>/</span><a href="#product" data-page="product">产品</a><span>/</span><span>浩辰CAD</span></div>
+        <h1 class="page-title">你的老图纸、老快捷键、老插件，全都还能用</h1>
+        <p class="page-lead">兼容性前置，是这个模板最重要的结构决策。对兼容型 CAD 产品，「能否无损打开现有图纸」是第一决策门槛。</p>
+        <div class="page-actions"><a class="btn btn-primary" href="#download" data-page="download">免费试用</a><a class="btn btn-ghost" href="#home" data-page="home" data-scroll="contact">获取报价</a></div>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="split">
+          <div class="panel">
+            <h3>兼容性预检</h3>
+            <p>先看兼容结果，再看功能。支持 DWG 2018、2013、2010、2007、2004 等版本。</p>
+            <ul class="check-list">
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>DWG 2018 / 2013 / 2010 / 2007 / 2004</li>
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>老快捷键与命令习惯保留</li>
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>常用老插件继续可用</li>
+              <li><svg class="icon icon-sm"><use href="#i-check"/></svg>图纸字体、线型、图层不丢失</li>
+            </ul>
+            <a class="btn btn-primary" style="margin-top:16px" href="#home" data-page="home" data-scroll="contact">上传图纸预检</a>
+          </div>
+          <div class="panel soft">
+            <h3>能力覆盖</h3>
+            <p>2D 绘图、编辑、标注、图层、块、外部参照、打印出图，覆盖日常设计全流程。</p>
+            <div class="industry-grid" style="grid-template-columns:1fr 1fr;margin-top:14px">
+              <span class="pill pill-blue">2D 绘图</span><span class="pill pill-blue">标注与文字</span><span class="pill pill-blue">图层与块</span><span class="pill pill-blue">外部参照</span><span class="pill pill-blue">打印出图</span><span class="pill pill-blue">协同设计</span>
+            </div>
+          </div>
+        </div>
+        <div class="sec-head" style="margin-top:44px"><div><div class="section-label">LICENSING</div><h2>版本与授权方式</h2><p>国内不公开价格，三列统一为「获取报价」。版本差异按能力对比，而不是价格表。</p></div></div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>版本</th><th>适用对象</th><th>能力差异</th><th>授权方式</th><th>下一步</th></tr></thead>
+            <tbody>
+              <tr><td class="strong">标准版</td><td>个人设计师、小团队</td><td>基础 2D 绘图与出图</td><td>永久授权 / 订阅</td><td><a href="#home" data-page="home" data-scroll="contact">获取报价</a></td></tr>
+              <tr><td class="strong">专业版</td><td>设计院、工程团队</td><td>专业模块、协同与兼容增强</td><td>永久授权 / 订阅</td><td><a href="#home" data-page="home" data-scroll="contact">获取报价</a></td></tr>
+              <tr><td class="strong">企业版</td><td>大型企业、政企</td><td>统一管理、信创适配、服务保障</td><td>按项目定制</td><td><a href="#home" data-page="home" data-scroll="contact">获取报价</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel" style="margin-top:16px">
+          <h3>常见问题</h3>
+          <p><strong>能不能直接打开老图纸？</strong> 支持主流 DWG 版本；建议先用图纸兼容性预检确认。</p>
+          <p style="margin-top:8px"><strong>老插件还能用吗？</strong> 常用插件可继续使用，特殊插件建议在试用环境验证。</p>
+          <p style="margin-top:8px"><strong>国内可以在线购买吗？</strong> 国内不公开价格，统一走「获取报价 / 联系销售」。</p>
+        </div>
+      </div>
+    </section>
+    <div class="cta-band"><div class="container inner"><div><h2>先试用，再决定</h2><p>用自己的项目跑一遍，比看功能介绍更可靠。</p></div><div class="actions"><a class="btn btn-primary" href="#download" data-page="download">免费试用</a><a class="btn btn-glass" href="#home" data-page="home" data-scroll="contact">获取报价</a></div></div></div>
+  </section>
+
+  <!-- ================= INDUSTRY ================= -->
+  <section class="page" id="page-industry">
+    <div class="page-head">
+      <div class="container">
+        <div class="breadcrumb"><a href="#home" data-page="home">首页</a><span>/</span><span>行业与客户案例</span></div>
+        <h1 class="page-title">行业与客户案例</h1>
+        <p class="page-lead">骨架是行业，案例是证据。4 个完整行业页 + 4 个轻量行业页；案例库保留独立入口，按行业、规模与地区筛选。</p>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="industry-grid">
+          <a class="industry-card" href="#solution" data-page="solution"><span class="industry-icon"><svg class="icon"><use href="#i-building"/></svg></span><h3>建筑设计</h3><p>方案协同、图纸交付与多专业配合。</p><div class="industry-meta"><span class="pill pill-deep">完整方案</span><span class="go">查看 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></div></a>
+          <a class="industry-card" href="#solution" data-page="solution"><span class="industry-icon"><svg class="icon"><use href="#i-layers"/></svg></span><h3>机电暖通</h3><p>管线综合、碰撞检查与深化出图。</p><div class="industry-meta"><span class="pill pill-deep">完整方案</span><span class="go">查看 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></div></a>
+          <a class="industry-card" href="#solution" data-page="solution"><span class="industry-icon"><svg class="icon"><use href="#i-zap"/></svg></span><h3>电力电气</h3><p>电气图、设备表与接线关系联动。</p><div class="industry-meta"><span class="pill pill-deep">完整方案</span><span class="go">查看 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></div></a>
+          <a class="industry-card" href="#solution" data-page="solution"><span class="industry-icon"><svg class="icon"><use href="#i-factory"/></svg></span><h3>机械制造</h3><p>历史图纸兼容与工艺协同。</p><div class="industry-meta"><span class="pill pill-deep">完整方案</span><span class="go">查看 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></div></a>
+          <a class="industry-card" href="#solution" data-page="solution"><span class="industry-icon"><svg class="icon"><use href="#i-map"/></svg></span><h3>基础设施</h3><p>大体量图纸与多标段协同。</p><div class="industry-meta"><span class="pill pill-light">轻量方案</span><span class="go">查看 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></div></a>
+          <a class="industry-card" href="#solution" data-page="solution"><span class="industry-icon"><svg class="icon"><use href="#i-pin"/></svg></span><h3>测绘地信</h3><p>地形图、坐标系统与既有数据适配。</p><div class="industry-meta"><span class="pill pill-light">轻量方案</span><span class="go">查看 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></div></a>
+          <a class="industry-card" href="#solution" data-page="solution"><span class="industry-icon"><svg class="icon"><use href="#i-shield"/></svg></span><h3>信创国产化</h3><p>国产软硬件环境适配与数据安全。</p><div class="industry-meta"><span class="pill pill-light">轻量方案</span><span class="go">查看 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></div></a>
+          <a class="industry-card" href="#solution" data-page="solution"><span class="industry-icon"><svg class="icon"><use href="#i-graduation"/></svg></span><h3>图学教育</h3><p>教学授权与实训环境。</p><div class="industry-meta"><span class="pill pill-light">轻量方案</span><span class="go">查看 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></div></a>
+        </div>
+        <div class="sec-head" style="margin-top:46px"><div><div class="section-label">CASES</div><h2>客户案例库</h2><p>按行业、企业规模与地区筛选。案例详情 URL 保持 /case/{slug} 不变。</p></div></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px"><span class="pill pill-blue">全部</span><span class="pill pill-light">建筑设计</span><span class="pill pill-light">机电暖通</span><span class="pill pill-light">机械制造</span><span class="pill pill-light">10–50 人</span><span class="pill pill-light">50 人以上</span></div>
+        <div class="case-grid">
+          <a class="case-card" href="#solution" data-page="solution"><span class="case-client">大中电机</span><div class="case-metric">约 15%<small>设计效率提升</small></div><p>多版本历史图纸直接打开，新产品导入周期明显缩短。</p><span>阅读案例 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+          <a class="case-card" href="#solution" data-page="solution"><span class="case-client">同泰新能源</span><div class="case-metric">按期<small>项目交付</small></div><p>本地服务团队快速响应，保障项目按期交付。</p><span>阅读案例 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+          <a class="case-card" href="#solution" data-page="solution"><span class="case-client">万达客车</span><div class="case-metric">无痛<small>历史数据迁移</small></div><p>多品类、多版本、多格式历史设计数据兼容适配。</p><span>阅读案例 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+          <a class="case-card" href="#solution" data-page="solution"><span class="case-client">合立道设计集团</span><div class="case-metric">集成<small>企业自研平台</small></div><p>蓝图功能集成至企业自研管理平台，提高协同效率。</p><span>阅读案例 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+          <a class="case-card" href="#solution" data-page="solution"><span class="case-client">川维石化</span><div class="case-metric">安全<small>自主可控</small></div><p>自主可控软件，保障设计数据安全与合规。</p><span>阅读案例 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+          <a class="case-card" href="#solution" data-page="solution"><span class="case-client">海口市设计集团</span><div class="case-metric">适配<small>垂直领域</small></div><p>平台 + 专业软件，满足细分设计需求。</p><span>阅读案例 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></a>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ================= SOLUTION ================= -->
+  <section class="page" id="page-solution">
+    <div class="page-head">
+      <div class="container">
+        <div class="breadcrumb"><a href="#home" data-page="home">首页</a><span>/</span><a href="#industry" data-page="industry">行业与客户案例</a><span>/</span><span>建筑设计</span></div>
+        <h1 class="page-title">建筑设计行业解决方案</h1>
+        <p class="page-lead">先用业务问题建立共鸣，再讲方案架构、产品组合、量化收益和同类案例，最后给实施路径与低门槛入口。</p>
+        <div class="page-actions"><a class="btn btn-primary" href="#home" data-page="home" data-scroll="contact">获取行业方案</a><a class="btn btn-ghost" href="#home" data-page="home" data-scroll="contact">图纸兼容性预检</a></div>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="sec-head"><div><div class="section-label">PAIN POINTS</div><h2>设计院正在面对的问题</h2></div></div>
+        <div class="feature-grid">
+          <div class="feature-card"><svg class="icon"><use href="#i-file"/></svg><h3>老图纸打不开</h3><p>历史项目多版本、多格式，替换软件时最怕图纸丢失或字体错乱。</p></div>
+          <div class="feature-card"><svg class="icon"><use href="#i-layers"/></svg><h3>多专业协同难</h3><p>建筑、结构、机电各自为战，提资与碰撞检查反复返工。</p></div>
+          <div class="feature-card"><svg class="icon"><use href="#i-shield"/></svg><h3>自主可控要求</h3><p>政企与设计院需要国产软硬件环境适配与数据安全合规。</p></div>
+        </div>
+        <div class="sec-head" style="margin-top:46px"><div><div class="section-label">SOLUTION</div><h2>方案架构</h2></div></div>
+        <div class="steps">
+          <div class="step"><b>1</b><h4>CAD 平台</h4><p>浩辰CAD 平台软件，统一绘图与出图底座。</p></div>
+          <div class="step"><b>2</b><h4>建筑专业</h4><p>浩辰CAD 建筑，覆盖轴网、墙体、门窗、楼梯与详图。</p></div>
+          <div class="step"><b>3</b><h4>BIM 协同</h4><p>GstarBIM，多专业模型协同与数据应用。</p></div>
+          <div class="step"><b>4</b><h4>服务与信创</h4><p>实施、培训、插件适配与国产环境支持。</p></div>
+        </div>
+        <div class="sec-head" style="margin-top:46px"><div><div class="section-label">RESULTS</div><h2>量化收益</h2><p>以下为示例指标，正式上线前替换为真实可核验数据。</p></div></div>
+        <div class="case-grid">
+          <div class="case-card"><span class="case-client">设计效率</span><div class="case-metric">+15%<small>示例</small></div><p>标准图元与专业模块减少重复绘图。</p></div>
+          <div class="case-card"><span class="case-client">图纸兼容</span><div class="case-metric">100%<small>示例</small></div><p>主流 DWG 版本无损打开。</p></div>
+          <div class="case-card"><span class="case-client">协同周期</span><div class="case-metric">-20%<small>示例</small></div><p>多专业提资与碰撞检查前置。</p></div>
+        </div>
+        <div class="sec-head" style="margin-top:46px"><div><div class="section-label">IMPLEMENTATION</div><h2>实施路径</h2></div></div>
+        <div class="steps">
+          <div class="step"><b>1</b><h4>评估</h4><p>图纸兼容性预检与现状调研。</p></div>
+          <div class="step"><b>2</b><h4>试点</h4><p>选一个项目或团队试用。</p></div>
+          <div class="step"><b>3</b><h4>推广</h4><p>培训、模板、插件适配。</p></div>
+          <div class="step"><b>4</b><h4>服务</h4><p>持续支持与版本升级。</p></div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ================= PARTNERS ================= -->
+  <section class="page" id="page-partners">
+    <div class="page-head">
+      <div class="container">
+        <div class="breadcrumb"><a href="#home" data-page="home">首页</a><span>/</span><span>生态与合作</span></div>
+        <h1 class="page-title">生态与合作</h1>
+        <p class="page-lead">两类角色严格分区：二开伙伴展示应用，授权经销商展示本地服务能力。即使同一家公司兼具两种身份，也分别在两个分区出现。</p>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="split">
+          <div class="panel">
+            <span class="pill pill-blue">分区 A · 二次开发伙伴</span>
+            <h3 style="margin-top:12px">100+ 基于浩辰CAD 的行业应用</h3>
+            <p>展示的是伙伴的产品，不是伙伴公司简介。按行业筛选应用。</p>
+            <div class="industry-grid" style="grid-template-columns:1fr;margin-top:14px">
+              <a class="industry-card" style="min-height:auto" href="#"><span class="industry-icon"><svg class="icon"><use href="#i-building"/></svg></span><h3>建筑算量</h3><p>工程量计算与复核 · 伙伴应用（示例）</p><div class="industry-meta"><span class="pill pill-light">示例</span><span class="go">查看应用 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></div></a>
+              <a class="industry-card" style="min-height:auto" href="#"><span class="industry-icon"><svg class="icon"><use href="#i-layers"/></svg></span><h3>机电深化</h3><p>管线综合与碰撞检查 · 伙伴应用（示例）</p><div class="industry-meta"><span class="pill pill-light">示例</span><span class="go">查看应用 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></div></a>
+              <a class="industry-card" style="min-height:auto" href="#"><span class="industry-icon"><svg class="icon"><use href="#i-factory"/></svg></span><h3>机械工艺</h3><p>工艺卡片与刀具参数 · 伙伴应用（示例）</p><div class="industry-meta"><span class="pill pill-light">示例</span><span class="go">查看应用 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></span></div></a>
+            </div>
+            <div class="page-actions"><a class="btn btn-primary" href="#">浏览应用市场</a><a class="btn btn-ghost" href="#">成为二开伙伴</a></div>
+          </div>
+          <div class="panel soft">
+            <span class="pill pill-amber">分区 B · 授权经销商</span>
+            <h3 style="margin-top:12px">覆盖全国的本地服务网络</h3>
+            <p>经销商提供本地报价、发票、采购流程、实施与售后。国内以直销与大客户为主，经销商作为补充。</p>
+            <div class="table-wrap" style="margin-top:14px">
+              <table class="data-table">
+                <thead><tr><th>地区</th><th>授权级别</th><th>联系</th></tr></thead>
+                <tbody>
+                  <tr><td>华东</td><td>金牌</td><td><a href="#">联系</a></td></tr>
+                  <tr><td>华北</td><td>银牌</td><td><a href="#">联系</a></td></tr>
+                  <tr><td>华南</td><td>授权</td><td><a href="#">联系</a></td></tr>
+                  <tr><td>西南</td><td>授权</td><td><a href="#">联系</a></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="page-actions"><a class="btn btn-dark" href="#">查找本地经销商</a><a class="btn btn-ghost" href="#">成为经销商</a></div>
+            <p style="margin-top:12px;font-size:11px">名单与授权级别以内部授权矩阵为准；原型为示意数据。</p>
+          </div>
+        </div>
+        <div class="panel" style="margin-top:16px"><h3>开发者入口</h3><p>GRX / .NET / COM / LISP / Python 接口文档、SDK、示例与社区。开发者是资源入口，不与应用市场混排。</p><a class="btn btn-ghost" style="margin-top:12px" href="#">进入开发者中心 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a></div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ================= MOBILE ================= -->
+  <section class="page" id="page-mobile">
+    <div class="page-head">
+      <div class="container">
+        <div class="breadcrumb"><a href="#home" data-page="home">首页</a><span>/</span><span>移动端</span></div>
+        <h1 class="page-title">移动端导航与首页</h1>
+        <p class="page-lead">移动端独立 DOM，不复制 PC 菜单的 50+ 链接。场景入口提前，AI 置顶，顶部固定报价、底部固定操作条。</p>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="phone-stage">
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="phone-bar"><span>GSTARSOFT</span><span style="color:var(--brand-dark)">获取报价</span></div>
+              <div class="phone-hero">
+                <h3>浩辰CAD 2027<br>自主可控的智能设计平台</h3>
+                <p>DWG 完全兼容，老图纸、老快捷键、老插件继续可用。</p>
+                <span class="btn btn-primary">免费试用</span>
+              </div>
+              <div class="phone-section"><h4>AI 应用矩阵</h4><div class="phone-list"><div>浩辰AI设计智能体 · 从需求到方案</div><div>浩辰AI助手 · 自然语言驱动</div><div>浩辰AI渲染 · 效果图生成</div></div></div>
+              <div class="phone-section"><h4>按行业选择</h4><div class="phone-list"><div>建筑设计</div><div>机电暖通</div><div>电力电气</div><div>机械制造</div></div></div>
+              <div class="phone-section" style="padding-bottom:70px"><h4>CAD / BIM 产品</h4><div class="phone-list"><div>浩辰CAD 平台软件</div><div>浩辰CAD 建筑</div><div>浩辰CAD 机械</div></div></div>
+              <div class="phone-bottom"><a href="#">获取报价</a><a class="primary" href="#">免费试用</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="panel" style="max-width:760px;margin:24px auto 0"><h3>移动端结构说明</h3><ul class="check-list"><li><svg class="icon icon-sm"><use href="#i-check"/></svg>场景入口提到二级菜单最前</li><li><svg class="icon icon-sm"><use href="#i-check"/></svg>AI 置顶，但只占一行，不展开产品列表</li><li><svg class="icon icon-sm"><use href="#i-check"/></svg>顶部固定「报价」，底部固定操作条</li><li><svg class="icon icon-sm"><use href="#i-check"/></svg>独立 DOM，降低 LCP 和 DOM 重复渲染</li></ul></div>
+      </div>
+    </section>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="#home" data-page="home"><span class="logo-mark">G</span><span class="logo-text"><strong>浩辰软件</strong><span>GSTARSOFT</span></span></a>
+        <p>自主可控的工业软件品牌，专注 CAD 平台与行业应用研发。</p>
+        <div class="footer-contact"><a href="tel:4008001418"><svg class="icon icon-sm"><use href="#i-phone"/></svg>400-800-1418</a><span><svg class="icon icon-sm"><use href="#i-pin"/></svg>苏州工业园区</span></div>
+      </div>
+      <div class="footer-col"><h4>产品与下载</h4><ul><li><a href="#product" data-page="product">浩辰CAD 平台软件</a></li><li><a href="#product" data-page="product">浩辰CAD 建筑</a></li><li><a href="#product" data-page="product">浩辰CAD 机械</a></li><li><a href="#download" data-page="download">下载中心</a></li></ul></div>
+      <div class="footer-col"><h4>行业与案例</h4><ul><li><a href="#industry" data-page="industry">建筑设计</a></li><li><a href="#industry" data-page="industry">机电暖通</a></li><li><a href="#industry" data-page="industry">电力电气</a></li><li><a href="#industry" data-page="industry">机械制造</a></li></ul></div>
+      <div class="footer-col"><h4>生态与合作</h4><ul><li><a href="#partners" data-page="partners">二开伙伴应用</a></li><li><a href="#partners" data-page="partners">授权经销商</a></li><li><a href="#partners" data-page="partners">成为合作伙伴</a></li></ul></div>
+      <div class="footer-col"><h4>关于</h4><ul><li><a href="#home" data-page="home">公司介绍</a></li><li><a href="#home" data-page="home">新闻动态</a></li><li><a href="#home" data-page="home" data-scroll="contact">联系我们</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 浩辰软件 版权所有 · 苏ICP备XXXXXXXX号（待补充）</span><nav><a href="#">隐私政策</a><a href="#">网站地图</a><a href="#home" data-page="home" data-scroll="contact">联系我们</a></nav></div>
+  </div>
+</footer>
+
+<script src="assets/prototype.js"></script>
+</body>
+</html>
